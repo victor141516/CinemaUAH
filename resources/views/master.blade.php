@@ -7,6 +7,8 @@
 
     <title>@yield('title')</title>
 
+    <link href="{{ url('favicon/favicon.ico') }}" rel="icon" type="image/x-icon" />
+
     <style type="text/css" media="screen">
         body {
             padding-top: 70px;
