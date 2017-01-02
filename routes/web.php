@@ -18,6 +18,7 @@ $app->get('/reservations', 'GuestController@showFilms');
 
 $app->group(['prefix' => 'admin'], function () use ($app) {
     $app->get('add_film', 'AdminController@addFilm');
+    $app->post('add_film', 'AdminController@saveFilm');
     $app->get('edit_film/{film_id}', 'AdminController@editFilm');
     $app->get('manage_films', 'AdminController@manageFilms');
 

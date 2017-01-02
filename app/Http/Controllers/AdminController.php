@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Laravel\Lumen\Application;
+use Illuminate\Http\Request;
+use App\Film;
 
 class AdminController extends Controller
 {
@@ -18,6 +20,16 @@ class AdminController extends Controller
 
     public function addFilm()
     {
+        $genres = Film::groupBy('genre')->get()->pluck('genre');
+        $age_ratings = Film::groupBy('age_rating')->get()->pluck('age_rating');
+        return view('admin.add_film')
+            ->withGenres($genres)
+            ->withAgeRatings($age_ratings);
+    }
+
+    public function saveFilm(Request $request)
+    {
+        dd($request->all());
         return view('admin.add_film');
     }
 

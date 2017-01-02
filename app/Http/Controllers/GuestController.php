@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Laravel\Lumen\Application;
+use App\Film;
 
 class GuestController extends Controller
 {
@@ -18,7 +19,9 @@ class GuestController extends Controller
 
     public function showFilms()
     {
-        return view('public.films');
+        $films = Film::paginate(10);
+        return view('public.films')
+            ->withFilms($films);
     }
 
     public function showFilmDetailed()

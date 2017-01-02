@@ -13,6 +13,8 @@ class Film extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'genre', 'duration', 'director'
-    ];
+        'id','name','synopsis','website','original_title',
+        'genre','country','minutes_duration','year',
+        'producer','director','age_rating','others',
+        'has_image',];
 }
