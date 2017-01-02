@@ -29,8 +29,9 @@ class AdminController extends Controller
 
     public function saveFilm(Request $request)
     {
-        dd($request->all());
-        return view('admin.add_film');
+        Film::insert($request->all());
+        return view('admin.add_film')
+            ->withSuccess("Película guardada correctamente.");
     }
 
     public function showFilmDetailed()

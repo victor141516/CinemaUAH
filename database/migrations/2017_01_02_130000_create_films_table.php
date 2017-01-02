@@ -38,7 +38,7 @@ class CreateFilmsTable extends Migration
         });
 
 
-        Schema::create('films_actors', function (Blueprint $table) {
+        Schema::create('actor_film', function (Blueprint $table) {
             $table->increments('id');
 
             $table->unsignedInteger('film_id');
@@ -56,8 +56,8 @@ class CreateFilmsTable extends Migration
      */
     public function down()
     {
+        Schema::drop('films_actors');
         Schema::drop('films');
         Schema::drop('actors');
-        Schema::drop('films_actors');
     }
 }

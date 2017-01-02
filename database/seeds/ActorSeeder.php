@@ -197,7 +197,7 @@ class ActorSeeder extends Seeder
 			DB::table('actors')->insert($each);        	
 		}
 		foreach ($relations as $each) {
-			DB::table('films_actors')->insert($each);        	
+			DB::table('actor_film')->insert($each);        	
 		}
 	}
 }

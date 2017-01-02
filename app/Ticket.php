@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Entry extends Model
+class Ticket extends Model
 {
-
     /**
      * The attributes that are mass assignable.
      *
@@ -15,4 +14,9 @@ class Entry extends Model
     protected $fillable = [
         'cinema_id', 'film_id'
     ];
+
+    public function film()
+    {
+        return $this->belongsTo('App\Film');
+    }
 }
