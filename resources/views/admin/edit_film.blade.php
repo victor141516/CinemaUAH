@@ -68,7 +68,7 @@
                 </div>
                 <div class="form-group">
                     <label for="actors" class="control-label">Actores</label>
-                    <input class="form-control" type="text" id="actors" name="actors" value="{{ $film->actors }}">
+                    <input class="form-control" type="text" id="actors" name="actors" value="{{ $film->actors->implode('name', ', ') }}">
                 </div>
                 <div class="form-group">
                     <label for="age_rating" class="control-label">Clasificación</label>
