@@ -99,15 +99,15 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <div class="form-group">
-                    <label for="comment" class="control-label">Comentario</label>
-                    <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
-                </div>
-            </div>
-            <div class="col-xs-12">
-                <div class="form-group text-right">
-                    <a class="btn btn-primary">Añadir comentario</a> {{-- TODO: Ajax to add comment --}}
-                </div>
+                <form action="film_detailed_submit" method="post" accept-charset="utf-8">
+                    <div class="form-group">
+                        <label for="comment" class="control-label">Comentario</label>
+                        <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="submit" class="btn btn-primary">Añadir comentario</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

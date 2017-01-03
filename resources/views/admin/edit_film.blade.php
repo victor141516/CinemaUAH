@@ -10,7 +10,7 @@
 
 @section('content')
 
-    <form action="add_film" method="post" accept-charset="utf-8">
+    <form action="edit_film" method="post" accept-charset="utf-8">
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
@@ -19,47 +19,68 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-xs-12 col-md-offset-3">
+            <div class="col-md-4 col-xs-12">
                 <div class="form-group">
-                    <label for="title" class="control-label">Título</label>
-                    <input class="form-control" type="text" id="title" name="title">
+                    <label for="name" class="control-label">Título</label>
+                    <input class="form-control" type="text" id="name" name="name" value="{{ $film->name }}">
                 </div>
                 <div class="form-group">
-                    <label for="Director" class="control-label">Director</label>
-                    <input class="form-control" type="text" id="Director" name="director">
+                    <label for="synopsis" class="control-label">Sinopsis</label>
+                    <textarea class="form-control" rows="4" id="synopsis" name="synopsis"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="website" class="control-label">Página Oficial</label>
+                    <input class="form-control" type="text" id="website" name="website" value="{{ $film->website }}">
+                </div>
+                <div class="form-group">
+                    <label for="original_title" class="control-label">Título original</label>
+                    <input class="form-control" type="text" id="original_title" name="original_title" value="{{ $film->original_title }}">
                 </div>
                 <div class="form-group">
                     <label for="genre" class="control-label">Género</label>
                     <select class="form-control" id="genre" name="genre">
-                        @foreach($genres as $each)
-                            <option>{{ $each }}</option>
+                        @foreach($genres as $genre)
+                            <option @if($film->genre == $genre) selected="selected" @endif>{{ $genre }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="Duración" class="control-label">Duración</label>
-                    <input class="form-control" type="number" id="Duración" name="minutes_duration">
+                    <label for="nationality" class="control-label">Nacionalidad</label>
+                    <input class="form-control" type="text" id="nationality" name="nationality" value="{{ $film->nationality }}">
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <div class="form-group">
+                    <label for="minutes_duration" class="control-label">Duración</label>
+                    <input class="form-control" type="number" id="minutes_duration" name="minutes_duration" value="{{ $film->minutes_duration }}">
                 </div>
                 <div class="form-group">
-                    <label for="website" class="control-label">Página Oficial</label>
-                    <input class="form-control" type="text" id="website" name="website">
+                    <label for="year" class="control-label">Año</label>
+                    <input class="form-control" type="number" id="year" name="year" value="{{ $film->year }}">
                 </div>
                 <div class="form-group">
-                    <label for="date" class="control-label">Fecha de estreno</label>
-                    <input class="form-control" type="number" id="date" name="year">
+                    <label for="distributor" class="control-label">Distribuidora</label>
+                    <input class="form-control" type="text" id="distributor" name="distributor" value="{{ $film->distributor }}">
                 </div>
                 <div class="form-group">
-                    <label for="synopsis" class="control-label">Sinopsis</label>
-                    <textarea class="form-control" rows="3" id="synopsis" name="synopsis"></textarea>
+                    <label for="Director" class="control-label">Director</label>
+                    <input class="form-control" type="text" id="Director" name="director" value="{{ $film->director }}">
                 </div>
-
+                <div class="form-group">
+                    <label for="actors" class="control-label">Actores</label>
+                    <input class="form-control" type="text" id="actors" name="actors" value="{{ $film->actors }}">
+                </div>
                 <div class="form-group">
                     <label for="Clasificación" class="control-label">Clasificación</label>
                     <select class="form-control" id="Clasificación" name="age_rating">
-                        @foreach($age_ratings as $each)
-                            <option>{{ $each }}</option>
+                        @foreach($age_ratings as $age_rating)
+                            <option @if($film->age_rating == $age_rating) selected="selected" @endif>{{ $age_rating }}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="additional_data" class="control-label">Datos</label>
+                    <input class="form-control" type="text" id="additional_data" name="additional_data" value="{{ $film->additional_data }}">
                 </div>
             </div>
             <div class="col-md-4 col-xs-12">
