@@ -34,11 +34,11 @@
                 </li>
             </ul>
         </li>
-        <li role="presentation" @if (app('request')->is('admin/manage_reservations')) class="active" @endif>
+        <li role="presentation" @if (app('request')->is('admin/manage_tickets')) class="active" @endif>
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Reservas <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li role="presentation" @if (app('request')->is('admin/manage_reservations')) class="active" @endif>
-                    <a href="{{ url('admin/manage_reservations') }}">Administrar reservas</a>
+                <li role="presentation" @if (app('request')->is('admin/manage_tickets')) class="active" @endif>
+                    <a href="{{ url('admin/manage_tickets/select_theater') }}">Administrar reservas</a>
                 </li>
             </ul>
         </li>

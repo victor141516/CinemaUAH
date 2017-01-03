@@ -27,4 +27,19 @@ class Film extends Model
     {
         return $this->belongsToMany('App\Actor');
     }
+
+    public function projections()
+    {
+        return $this->hasMany('App\Projections');
+    }
+
+    public static function getGenres()
+    {
+    	return self::groupBy('genre')->get()->pluck('genre');
+    }
+
+    public static function getAgeRatings()
+    {
+    	return self::groupBy('age_rating')->get()->pluck('age_rating');
+    }
 }

@@ -21,7 +21,7 @@
 
 @section('content')
 
-    <form action="add_film_submit" method="post" accept-charset="utf-8">
+    <form action="add_theater" method="post" accept-charset="utf-8">
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
@@ -33,19 +33,19 @@
             <div class="col-sm-4 col-xs-12">
                 <div class="form-group">
                     <label for="name" class="control-label">Nombre</label>
-                    <input class="form-control" type="text" id="name">
+                    <input class="form-control" type="text" id="name" name="name">
                 </div>
             </div>
             <div class="col-sm-4 col-xs-12">
                 <div class="form-group">
                     <label for="rows" class="control-label">Filas</label>
-                    <input class="form-control" type="number" id="rows" min="1" max="100">
+                    <input class="form-control" type="number" id="rows" min="1" max="100" name="n_rows">
                 </div>
             </div>
             <div class="col-sm-4 col-xs-12">
                 <div class="form-group">
                     <label for="columns" class="control-label">Columnas</label>
-                    <input class="form-control" type="number" id="columns" min="1" max="100" disabled>
+                    <input class="form-control" type="number" id="columns" min="1" max="100" disabled name="n_columns">
                 </div>
             </div>
         </div>

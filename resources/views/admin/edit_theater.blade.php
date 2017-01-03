@@ -21,7 +21,7 @@
 
 @section('content')
 
-    <form action="add_film_submit" method="post" accept-charset="utf-8">
+    <form action="" method="post" accept-charset="utf-8">
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
