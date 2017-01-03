@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Laravel\Lumen\Application;
 use Illuminate\Http\Request;
 use App\Film;
+use App\Theater;
 
 class AdminController extends Controller
 {
@@ -39,9 +40,13 @@ class AdminController extends Controller
     public function editFilm($id)
     {
         $film = Film::where('id', $id)->first();
+        $genres = Film::groupBy('genre')->get()->pluck('genre');
+        $age_ratings = Film::groupBy('age_rating')->get()->pluck('age_rating');
 
-        require view('admin.edit_film')
-                ->withFilm($film);
+        return view('admin.edit_film')
+                ->withFilm($film)
+                ->withGenres($genres)
+                ->withAgeRatings($age_ratings);
     }
 
     public function manageFilms()
@@ -50,6 +55,22 @@ class AdminController extends Controller
 
         return view('admin.manage_films')
                 ->withFilms($films);
+    }
+
+    public function editTheater($id)
+    {
+        $theater = Theater::where('id', $id)->first();
+
+        return view('admin.edit_theater')
+                ->withTheater($theater);
+    }
+
+    public function manageTheaters()
+    {
+        $theaters = Theater::all();
+
+        return view('admin.manage_theaters')
+                ->withTheaters($theaters);
     }
 
     public function showFilmDetailed()

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-    Añadir / Editar pelicula
+    Editar ({{ $film->name }})
 @endsection
 
 @section('navbar')
@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="synopsis" class="control-label">Sinopsis</label>
-                    <textarea class="form-control" rows="4" id="synopsis" name="synopsis"></textarea>
+                    <textarea class="form-control" rows="4" id="synopsis" name="synopsis">{{ $film->synopsis }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="website" class="control-label">Página Oficial</label>
@@ -39,8 +39,8 @@
                 <div class="form-group">
                     <label for="genre" class="control-label">Género</label>
                     <select class="form-control" id="genre" name="genre">
-                        @foreach($genres as $genre)
-                            <option @if($film->genre == $genre) selected="selected" @endif>{{ $genre }}</option>
+                        @foreach($genres as $each)
+                            <option value="{{ $each }}" @if($film->genre == $each) selected="selected" @endif>{{ $each }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -71,10 +71,10 @@
                     <input class="form-control" type="text" id="actors" name="actors" value="{{ $film->actors }}">
                 </div>
                 <div class="form-group">
-                    <label for="Clasificación" class="control-label">Clasificación</label>
-                    <select class="form-control" id="Clasificación" name="age_rating">
+                    <label for="age_rating" class="control-label">Clasificación</label>
+                    <select class="form-control" id="age_rating" name="age_rating">
                         @foreach($age_ratings as $age_rating)
-                            <option @if($film->age_rating == $age_rating) selected="selected" @endif>{{ $age_rating }}</option>
+                            <option value="{{ $age_rating }}" @if($film->age_rating == $age_rating) selected @endif>{{ $age_rating }}</option>
                         @endforeach
                     </select>
                 </div>

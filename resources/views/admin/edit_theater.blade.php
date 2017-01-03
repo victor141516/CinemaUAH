@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-    Añadir sala
+    Editar sala ({{ $theater->name }})
 @endsection
 
 @section('extra-css')
@@ -33,19 +33,19 @@
             <div class="col-sm-4 col-xs-12">
                 <div class="form-group">
                     <label for="name" class="control-label">Nombre</label>
-                    <input class="form-control" type="text" id="name">
+                    <input class="form-control" type="text" id="name" value="{{ $theater->name }}">
                 </div>
             </div>
             <div class="col-sm-4 col-xs-12">
                 <div class="form-group">
                     <label for="rows" class="control-label">Filas</label>
-                    <input class="form-control" type="number" id="rows" min="1" max="100">
+                    <input class="form-control" type="number" id="rows" min="1" max="100" value="{{ $theater->rows }}">
                 </div>
             </div>
             <div class="col-sm-4 col-xs-12">
                 <div class="form-group">
                     <label for="columns" class="control-label">Columnas</label>
-                    <input class="form-control" type="number" id="columns" min="1" max="100" disabled>
+                    <input class="form-control" type="number" id="columns" min="1" max="100" value="{{ $theater->columns }}">
                 </div>
             </div>
         </div>

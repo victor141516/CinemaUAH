@@ -21,6 +21,7 @@ $app->group(['prefix' => 'admin'], function () use ($app) {
     $app->post('add_film', 'AdminController@saveFilm');
     $app->get('edit_film/{id}', 'AdminController@editFilm');
     $app->get('manage_films', 'AdminController@manageFilms');
+    $app->get('manage_theaters', 'AdminController@manageTheaters');
 
     $app->get('add_theater', 'AdminController@addTheater');
 });
