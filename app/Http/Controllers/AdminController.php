@@ -37,6 +37,13 @@ class AdminController extends Controller
                 ->withSuccess("Película guardada correctamente.");
     }
 
+    public function deleteFilm($id)
+    {
+        Film::delete($id);
+
+        return redirect('admin/manage_films');
+    }
+
     public function editFilm($id)
     {
         $film = Film::where('id', $id)->first();
@@ -65,17 +72,19 @@ class AdminController extends Controller
                 ->withTheater($theater);
     }
 
+    public function deleteTheater($id)
+    {
+        Theater::delete($id);
+
+        return redirect('admin/manage_theaters');
+    }
+
     public function manageTheaters()
     {
         $theaters = Theater::all();
 
         return view('admin.manage_theaters')
                 ->withTheaters($theaters);
-    }
-
-    public function showFilmDetailed()
-    {
-        # code...
     }
 
     public function addTheater()

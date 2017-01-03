@@ -18,10 +18,12 @@ $app->get('/reservations', 'GuestController@showFilms');
 
 $app->group(['prefix' => 'admin'], function () use ($app) {
     $app->get('add_film', 'AdminController@addFilm');
+    $app->get('delete_film/{id}', 'AdminController@deleteFilm');
     $app->post('add_film', 'AdminController@saveFilm');
     $app->get('edit_film/{id}', 'AdminController@editFilm');
     $app->get('manage_films', 'AdminController@manageFilms');
     $app->get('manage_theaters', 'AdminController@manageTheaters');
+    $app->get('delete_theater/{id}', 'AdminController@deleteTheaters');
 
     $app->get('add_theater', 'AdminController@addTheater');
 });
