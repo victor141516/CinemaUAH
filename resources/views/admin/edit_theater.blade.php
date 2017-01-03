@@ -95,7 +95,7 @@
 
         function fillColumns() {
             var nColumnas = $('#columns').val();
-            $('.fila').each((index, el) => {
+            $('.fila').empty().each((index, el) => {
                 for (var i = 0; i < nColumnas; i++) {
                     $('<div class="text-center columna" id="columna' + i + '"><img src="http://88.8.199.15:81/Imagenes/Libre_1.bmp" alt=""></div>').appendTo(el);
                 }
