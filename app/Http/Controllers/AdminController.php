@@ -6,7 +6,9 @@ use Laravel\Lumen\Application;
 use Illuminate\Http\Request;
 use App\Film;
 use App\Projection;
+use App\Ticket;
 use App\Theater;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -95,8 +97,19 @@ class AdminController extends Controller
             return error(403);
         }
         $projections = Theater::find($theater_id)->projections()->with('film')->get();
-        dd($projections);
+
         return view('admin.manage_tickets_projections')
                 ->withProjections($projections);
+    }
+
+    public function manageTheatersSelectSeats($projection_id = false)
+    {
+        if (!$projection_id) {
+            return error(403);
+        }
+        $seats = Ticket::bookedSeats($projection_id)->get();
+
+        return view('admin.manage_tickets_projections')
+                ->withSeats($seats);
     }
 }

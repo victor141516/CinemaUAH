@@ -31,5 +31,6 @@ $app->group(['prefix' => 'admin'], function () use ($app) {
 
     $app->get('manage_tickets/select_theater', 'AdminController@manageTheatersSelectTheater');
     $app->get('manage_tickets/{theater_id}/select_projection', 'AdminController@manageTheatersSelectProjection');
+    $app->get('manage_tickets/{projection_id}/select_seats', 'AdminController@manageTheatersSelectSeats');
 });
 
