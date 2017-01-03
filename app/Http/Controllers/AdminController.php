@@ -25,6 +25,13 @@ class AdminController extends Controller
         return redirect("#");
     }
 
+    public function deleteFilm($id)
+    {
+        Film::delete($id);
+
+        return redirect('admin/manage_films');
+    }
+
     public function editFilm($id)
     {
         $film = Film::find($id);
@@ -38,7 +45,7 @@ class AdminController extends Controller
     public function manageFilms()
     {
         $films = Film::paginate(10);
-        
+
         return view('admin.manage_films')
                 ->withFilms($films)
                 ->withGenres(Film::getGenres())
@@ -54,6 +61,13 @@ class AdminController extends Controller
     {
         $theater = Theater::find($id);
         return view('admin.edit_theater')->withTheater($theater);
+    }
+
+    public function deleteTheater($id)
+    {
+        Theater::delete($id);
+
+        return redirect('admin/manage_theaters');
     }
 
     public function manageTheaters()
