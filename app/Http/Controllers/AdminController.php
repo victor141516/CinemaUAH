@@ -14,45 +14,35 @@ class AdminController extends Controller
 {
     public function addFilm()
     {
-        $genres = Film::groupBy('genre')->get()->pluck('genre');
-        $age_ratings = Film::groupBy('age_rating')->get()->pluck('age_rating');
-
         return view('admin.add_film')
-                ->withGenres($genres)
-                ->withAgeRatings($age_ratings);
+                ->withGenres(Film::getGenres())
+                ->withAgeRatings(Film::getAgeRatings());
     }
 
     public function saveFilm(Request $request, $id = false)
     {
         Film::updateOrCreate(['id' => $id], $request->all());
-        $genres = Film::groupBy('genre')->get()->pluck('genre');
-        $age_ratings = Film::groupBy('age_rating')->get()->pluck('age_rating');
-
         return redirect("#");
     }
 
     public function editFilm($id)
     {
         $film = Film::find($id);
-        $genres = Film::groupBy('genre')->get()->pluck('genre');
-        $age_ratings = Film::groupBy('age_rating')->get()->pluck('age_rating');
 
         return view('admin.edit_film')
                 ->withFilm($film)
-                ->withGenres($genres)
-                ->withAgeRatings($age_ratings);
+                ->withGenres(Film::getGenres())
+                ->withAgeRatings(Film::getAgeRatings());
     }
 
     public function manageFilms()
     {
         $films = Film::paginate(10);
-        $genres = Film::groupBy('genre')->get()->pluck('genre');
-        $age_ratings = Film::groupBy('age_rating')->get()->pluck('age_rating');
-
+        
         return view('admin.manage_films')
                 ->withFilms($films)
-                ->withGenres($genres)
-                ->withAgeRatings($age_ratings);
+                ->withGenres(Film::getGenres())
+                ->withAgeRatings(Film::getAgeRatings());
     }
 
     public function addTheater()
@@ -63,32 +53,25 @@ class AdminController extends Controller
     public function editTheater($id)
     {
         $theater = Theater::find($id);
-        
-        return view('admin.edit_theater')
-                ->withTheater($theater);
+        return view('admin.edit_theater')->withTheater($theater);
     }
 
     public function manageTheaters()
     {
         $theaters = Theater::paginate(10);
-
-        return view('admin.manage_theaters')
-                ->withTheaters($theaters);
+        return view('admin.manage_theaters')->withTheaters($theaters);
     }
 
     public function saveTheater(Request $request, $id = false)
     {
         Theater::updateOrCreate(['id' => $id], $request->all());
-        
         return redirect("#");
     }
 
     public function manageTheatersSelectTheater()
     {
         $theaters = Theater::paginate(10);
-
-        return view('admin.manage_tickets_theaters')
-                ->withTheaters($theaters);
+        return view('admin.manage_tickets_theaters')->withTheaters($theaters);
     }
 
     public function manageTheatersSelectProjection($theater_id = false)

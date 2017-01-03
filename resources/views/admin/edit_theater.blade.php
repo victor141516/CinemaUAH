@@ -1,7 +1,18 @@
 @extends('master')
 
 @section('title')
-    Editar sala
+    Editar sala ({{ $theater->name }})
+@endsection
+
+@section('extra-css')
+    <style type="text/css" media="screen">
+        .fila {
+            display: flex;
+        }
+        .columna {
+            flex-basis: 100%;
+        }
+    </style>
 @endsection
 
 @section('navbar')
@@ -19,21 +30,75 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-xs-12 col-md-offset-4">
+            <div class="col-sm-4 col-xs-12">
                 <div class="form-group">
                     <label for="name" class="control-label">Nombre</label>
-                    <input class="form-control" type="text" id="name" name="name" value={{ $theater->name }}>
+                    <input class="form-control" type="text" id="name" value="{{ $theater->name }}">
                 </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
                 <div class="form-group">
                     <label for="rows" class="control-label">Filas</label>
-                    <input class="form-control" type="number" id="rows" name="n_rows" value={{ $theater->n_rows }}>
+                    <input class="form-control" type="number" id="rows" min="1" max="100" value="{{ $theater->rows }}">
                 </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
                 <div class="form-group">
                     <label for="columns" class="control-label">Columnas</label>
-                    <input class="form-control" type="number" id="columns" name="n_columns" value={{ $theater->n_columns }}>
+                    <input class="form-control" type="number" id="columns" min="1" max="100" value="{{ $theater->columns }}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="theater">
+                <div class="row text-center" style="background-color: grey;">
+                    <strong>Pantalla</strong>
                 </div>
             </div>
         </div>
     </form>
 
+@endsection
+
+@section('extra-js')
+    <script type="text/javascript">
+        $(document).ready(() => {
+            if ($('#rows').val()) {
+                $('#columns').prop('disabled', false);
+            }
+            fillRows();
+            fillColumns();
+        });
+
+        $('#rows').on('input', () => {
+            $('#columns').val('');
+            fillRows();
+            if ($('#rows').val()) {
+                $('#columns').prop('disabled', false);
+            } else {
+                $('#columns').prop('disabled', true);
+            }
+        });
+        $('#columns').on('input', () => {
+            fillColumns();
+        });
+
+        function fillRows() {
+            $('.fila').remove();
+            $('#columns').val('');
+            var nFilas = $('#rows').val();
+            for (var i = 0; i < nFilas; i++) {
+                $('#theater').append('<div class="row fila" id="fila' + i + '"></div>');
+            }
+        }
+
+        function fillColumns() {
+            var nColumnas = $('#columns').val();
+            $('.fila').each((index, el) => {
+                for (var i = 0; i < nColumnas; i++) {
+                    $('<div class="text-center columna" id="columna' + i + '"><img src="http://88.8.199.15:81/Imagenes/Libre_1.bmp" alt=""></div>').appendTo(el);
+                }
+            });
+        }
+    </script>
 @endsection
