@@ -39,13 +39,13 @@
             <div class="col-sm-4 col-xs-12">
                 <div class="form-group">
                     <label for="rows" class="control-label">Filas</label>
-                    <input class="form-control" type="number" id="rows" min="1" max="100" value="{{ $theater->rows }}">
+                    <input class="form-control" type="number" id="rows" min="1" max="100" value="{{ $theater->n_rows }}">
                 </div>
             </div>
             <div class="col-sm-4 col-xs-12">
                 <div class="form-group">
                     <label for="columns" class="control-label">Columnas</label>
-                    <input class="form-control" type="number" id="columns" min="1" max="100" value="{{ $theater->columns }}">
+                    <input class="form-control" type="number" id="columns" min="1" max="100" value="{{ $theater->n_columns }}">
                 </div>
             </div>
         </div>
@@ -61,5 +61,5 @@
 @endsection
 
 @section('extra-js')
-    <script type="text/javascript" src="js/display-seats.js"></script>
+    <script type="text/javascript" src="/js/display-seats.js"></script>
 @endsection

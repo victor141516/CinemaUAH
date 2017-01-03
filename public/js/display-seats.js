@@ -7,21 +7,22 @@ $(document).ready(() => {
 });
 
 $('#rows').on('input', () => {
-    $('#columns').val('');
-    fillRows();
     if ($('#rows').val()) {
         $('#columns').prop('disabled', false);
     } else {
+        $('#columns').val('');
         $('#columns').prop('disabled', true);
     }
+    fillRows();
+    fillColumns();
 });
 $('#columns').on('input', () => {
+    fillRows();
     fillColumns();
 });
 
 function fillRows() {
     $('.fila').remove();
-    $('#columns').val('');
     var nFilas = $('#rows').val();
     for (var i = 0; i < nFilas; i++) {
         $('#theater').append('<div class="row fila" id="fila' + i + '"></div>');
