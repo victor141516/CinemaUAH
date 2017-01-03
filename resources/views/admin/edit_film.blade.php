@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="col-md-4 col-xs-12">
-                caratula con dragDrop
+                <img src=@if($film->has_image) "/img/{{ $film->id }}.jpg" @else "/img/default.jpg" @endif alt="">
             </div>
         </div>
     </form>

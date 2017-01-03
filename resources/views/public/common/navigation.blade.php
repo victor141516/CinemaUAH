@@ -12,11 +12,8 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <!--Rol User-->
-        <li  @if (app('request')->is('/')) class="active" @endif>
-          <a href="{{ url('/') }}">Home</a>
-        </li>
         <li  @if (app('request')->is('films')) class="active" @endif>
-          <a href="{{ url('/films') }}">Películas</a>
+          <a href="{{ url('/') }}">Películas</a>
         </li>
         <li  @if (app('request')->is('theater')) class="active" @endif>
           <a href="{{ url('/theater') }}">Salas</a>

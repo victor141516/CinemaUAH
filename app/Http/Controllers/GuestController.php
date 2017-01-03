@@ -20,12 +20,17 @@ class GuestController extends Controller
     public function showFilms()
     {
         $films = Film::paginate(10);
+
         return view('public.films')
-            ->withFilms($films);
+                ->withFilms($films);
     }
 
-    public function showFilmDetailed()
+    public function showFilmDetailed($id)
     {
-        # code...
+        $film = Film::where('id', $id)->first();
+
+        return view('public.film_detailed')
+                ->withFilm($film)
+                ->withComments([]);
     }
 }

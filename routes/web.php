@@ -12,14 +12,14 @@
 */
 
 $app->get('/', 'GuestController@showFilms');
-$app->get('/films', 'GuestController@showFilms');
+$app->get('/film/{id}', 'GuestController@showFilmDetailed');
 $app->get('/theater', 'GuestController@showFilms');
 $app->get('/reservations', 'GuestController@showFilms');
 
 $app->group(['prefix' => 'admin'], function () use ($app) {
     $app->get('add_film', 'AdminController@addFilm');
     $app->post('add_film', 'AdminController@saveFilm');
-    $app->get('edit_film/{film_id}', 'AdminController@editFilm');
+    $app->get('edit_film/{id}', 'AdminController@editFilm');
     $app->get('manage_films', 'AdminController@manageFilms');
 
     $app->get('add_theater', 'AdminController@addTheater');
