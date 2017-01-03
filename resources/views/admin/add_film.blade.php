@@ -22,7 +22,7 @@
             <div class="col-md-4 col-xs-12 col-md-offset-3">
                 <div class="form-group">
                     <label for="title" class="control-label">Título</label>
-                    <input class="form-control" type="text" id="title" name="title">
+                    <input class="form-control" type="text" id="title" name="name">
                 </div>
                 <div class="form-group">
                     <label for="Director" class="control-label">Director</label>

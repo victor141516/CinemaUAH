@@ -27,4 +27,9 @@ class Film extends Model
     {
         return $this->belongsToMany('App\Actor');
     }
+
+    public function projections()
+    {
+        return $this->hasMany('App\Projections');
+    }
 }

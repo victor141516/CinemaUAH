@@ -17,14 +17,18 @@ class CreateTicketsTable extends Migration
             $table->increments('id');
             $table->datetime('date_time');
 
-            $table->unsignedInteger('film_id');
-            $table->foreign('film_id')->references('id')->on('films');
+            $table->unsignedInteger('projection_id');
+            $table->foreign('projection_id')->references('id')->on('projections');
 
             $table->unsignedInteger('theater_id');
             $table->foreign('theater_id')->references('id')->on('theaters');
+
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             
             $table->unsignedInteger('row');
             $table->unsignedInteger('column');
+            $table->boolean('is_paid')->default(false);
             $table->timestamps();
         });
     }

@@ -56,7 +56,7 @@ class CreateFilmsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('films_actors');
+        Schema::drop('actor_film');
         Schema::drop('films');
         Schema::drop('actors');
     }

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-    Añadir sala
+    Editar sala
 @endsection
 
 @section('navbar')
@@ -10,7 +10,7 @@
 
 @section('content')
 
-    <form action="add_theater" method="post" accept-charset="utf-8">
+    <form action="" method="post" accept-charset="utf-8">
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
@@ -22,15 +22,15 @@
             <div class="col-md-4 col-xs-12 col-md-offset-4">
                 <div class="form-group">
                     <label for="name" class="control-label">Nombre</label>
-                    <input class="form-control" type="text" id="name" name="name">
+                    <input class="form-control" type="text" id="name" name="name" value={{ $theater->name }}>
                 </div>
                 <div class="form-group">
                     <label for="rows" class="control-label">Filas</label>
-                    <input class="form-control" type="number" id="rows" name="n_rows">
+                    <input class="form-control" type="number" id="rows" name="n_rows" value={{ $theater->n_rows }}>
                 </div>
                 <div class="form-group">
                     <label for="columns" class="control-label">Columnas</label>
-                    <input class="form-control" type="number" id="columns" name="n_columns">
+                    <input class="form-control" type="number" id="columns" name="n_columns" value={{ $theater->n_columns }}>
                 </div>
             </div>
         </div>

@@ -13,6 +13,11 @@ class Theater extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'rows', 'columns'
+        'name', 'n_rows', 'n_columns'
     ];
+
+    public function projections()
+    {
+        return $this->hasMany('App\Projection');
+    }
 }

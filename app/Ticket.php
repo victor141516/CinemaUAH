@@ -12,11 +12,16 @@ class Ticket extends Model
      * @var array
      */
     protected $fillable = [
-        'cinema_id', 'film_id'
+        'user_id', 'cinema_id', 'projection_id'
     ];
 
-    public function film()
+    public function projection()
     {
-        return $this->belongsTo('App\Film');
+        return $this->belongsTo('App\Projection');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }
