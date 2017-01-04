@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use Authenticable;
 use App\Comment;
 use App\Film;
 use App\Projection;
@@ -40,13 +39,12 @@ class AjaxController extends Controller
 		return -1;
 	}
 
-	public function comment(Authenticable $user, Request $request)
+	public function comment(Request $request)
 	{
-		dd($user);
-		return Comment::insert([
+		Comment::updateOrCreate([
 			'user_id' => Auth::id(),
 			'film_id' => $request->film_id,
-			'text' => $request->comment])
-		->id;
+			'text' => $request->comment])->id;
+		return back();
 	}
 }

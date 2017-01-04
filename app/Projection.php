@@ -29,5 +29,5 @@ class Projection extends Model
     public function tickets()
     {
         return $this->hasMany('App\Ticket');
-    }    
+    }
 }

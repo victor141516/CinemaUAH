@@ -104,9 +104,15 @@ class AdminController extends Controller
         if (!$projection_id) {
             return error(403);
         }
-        $seats = Projection::find($projection_id)->tickets;
+        $projection = Projection::with('tickets')->with('theater')->find($projection_id);
+
+        $seats = [];
+        foreach ($projection->tickets as $each) {
+            $seats[$each->id] = $each->row . '-' . $each->column;
+        }
 
         return view('admin.manage_tickets_projections')
-                ->withSeats($seats);
+                ->withSeats($seats)
+                ->withTheater($projection->theater);
     }
 }

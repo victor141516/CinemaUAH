@@ -16,9 +16,3 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
-
-Route::group(['middleware' => 'web'], function () {
-	Route::post('/book', 'AjaxController@bookSeat');
-	Route::post('/pay/{token}', 'AjaxController@paySeat');
-	Route::post('/comment', 'AjaxController@comment');
-});

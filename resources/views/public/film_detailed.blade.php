@@ -95,8 +95,9 @@
     @if(Auth::check())
         <div class="row">
             <div class="col-xs-12">
-                <form action="/api/comment" method="post" accept-charset="utf-8">
+                <form action="{{ url('/comment') }}" method="post" accept-charset="utf-8">
                     <input type="hidden" name="film_id" value="{{ $film->id }}">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="comment" class="control-label">Comentario</label>
                         <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>

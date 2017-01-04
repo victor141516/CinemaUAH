@@ -23,6 +23,10 @@ Route::get('auth/register', 'Auth\RegisterController@getRegister');
 Route::post('auth/register', 'Auth\RegisterController@postRegister');
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::post('comment', 'AjaxController@comment');
+    Route::post('api/book', 'AjaxController@bookSeat');
+    Route::post('api/pay/{token}', 'AjaxController@paySeat');
+    
     Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('add_film', 'AdminController@addFilm');
         Route::get('delete_film/{id}', 'AdminController@deleteFilm');
