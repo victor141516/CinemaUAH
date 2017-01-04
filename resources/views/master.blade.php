@@ -14,7 +14,7 @@
             padding-top: 70px;
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="{{ url('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
     @yield('extra-css')
 </head>
 <body>
