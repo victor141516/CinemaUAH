@@ -17,5 +17,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-        Route::post('add_film', 'AdminController@saveFilm');
-Route::post('/api/book')
+Route::post('/api/book', 'AjaxController@bookSeat');
