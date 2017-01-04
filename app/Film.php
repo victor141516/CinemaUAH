@@ -29,6 +29,11 @@ class Film extends Model
         return $this->belongsToMany('App\Actor');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Comments');
+    }
+
     public function projections()
     {
         return $this->hasMany('App\Projections');
