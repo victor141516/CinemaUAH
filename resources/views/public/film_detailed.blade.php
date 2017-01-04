@@ -92,19 +92,22 @@
         </div>
     @endforeach
 
-    <div class="row">
-        <div class="col-xs-12">
-            <form action="film_detailed_submit" method="post" accept-charset="utf-8">
-                <div class="form-group">
-                    <label for="comment" class="control-label">Comentario</label>
-                    <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
-                </div>
-                <div class="form-group text-right">
-                    <button type="submit" class="btn btn-primary">Añadir comentario</button>
-                </div>
-            </form>
+    @if(Auth::check())
+        <div class="row">
+            <div class="col-xs-12">
+                <form action="/api/comment" method="post" accept-charset="utf-8">
+                    <input type="hidden" name="film_id" value="{{ $film->id }}">
+                    <div class="form-group">
+                        <label for="comment" class="control-label">Comentario</label>
+                        <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="submit" class="btn btn-primary">Añadir comentario</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+    @endif
 
 @endsection
 
