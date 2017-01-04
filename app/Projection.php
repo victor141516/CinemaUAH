@@ -25,4 +25,9 @@ class Projection extends Model
     {
         return $this->belongsTo('App\Theater');
     }
+
+    public function tickets()
+    {
+        return $this->hasMany('App\Ticket');
+    }    
 }

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Actor;
 
 class Film extends Model
 {
@@ -41,5 +42,19 @@ class Film extends Model
     public static function getAgeRatings()
     {
     	return self::groupBy('age_rating')->get()->pluck('age_rating');
+    }
+
+    public static function updateOrCreateWithActors($compare, $request)
+    {
+        $actors = [];
+        if ($request->has('actors')) {
+            $actor_names = explode(',', $request->actors);
+            foreach ($actor_names as $each) {
+                $actors[] = Actor::updateOrCreate(['name' => trim($each)])->id;
+            }
+        }
+        $film = self::updateOrCreate($compare, $request->all());
+        $film->actors()->sync($actors);
+        return $film;
     }
 }

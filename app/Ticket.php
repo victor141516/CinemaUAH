@@ -13,7 +13,7 @@ class Ticket extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'cinema_id', 'projection_id'
+        'user_id', 'cinema_id', 'projection_id', 'row', 'column', 'is_paid',
     ];
 
     public function projection()

@@ -20,7 +20,7 @@ class AdminController extends Controller
 
     public function saveFilm(Request $request, $id = false)
     {
-        Film::updateOrCreate(['id' => $id], $request->all());
+        Film::updateOrCreateWithActors(['id' => $id], $request);
         return redirect("#");
     }
 
@@ -33,10 +33,11 @@ class AdminController extends Controller
 
     public function editFilm($id)
     {
-        $film = Film::find($id);
+        $film = Film::with('actors')->find($id);
 
         return view('admin.edit_film')
                 ->withFilm($film)
+                ->withActors(implode(', ', ($film->actors->pluck('name')->toArray())))
                 ->withGenres(Film::getGenres())
                 ->withAgeRatings(Film::getAgeRatings());
     }
@@ -103,7 +104,7 @@ class AdminController extends Controller
         if (!$projection_id) {
             return error(403);
         }
-        $seats = Ticket::bookedSeats($projection_id)->get();
+        $seats = Projection::find($projection_id)->tickets;
 
         return view('admin.manage_tickets_projections')
                 ->withSeats($seats);
