@@ -18,7 +18,6 @@ class GuestController extends Controller
 
     public function showFilms()
     {
-        dd(Auth::user());
         $films = Film::paginate(10);
 
         return view('public.films')

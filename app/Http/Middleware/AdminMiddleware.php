@@ -19,7 +19,7 @@ class AdminMiddleware
         if (auth()->check() && $request->user()->role != 'admin') {
             return redirect('/');
         }
-        return redirect('/admin/home');
+        return $next($request);
     }
 
 }
