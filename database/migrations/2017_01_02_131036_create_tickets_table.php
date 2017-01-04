@@ -15,7 +15,6 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
-            $table->datetime('date_time');
 
             $table->unsignedInteger('projection_id');
             $table->foreign('projection_id')->references('id')->on('projections');

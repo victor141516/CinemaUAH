@@ -11,6 +11,7 @@
 @section('content')
 
     <form action="add_film" method="post" accept-charset="utf-8">
+        {{ csrf_field() }}
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
