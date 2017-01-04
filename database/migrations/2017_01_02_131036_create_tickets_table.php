@@ -19,7 +19,7 @@ class CreateTicketsTable extends Migration
             $table->unsignedInteger('projection_id');
             $table->foreign('projection_id')->references('id')->on('projections');
 
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             
             $table->unsignedInteger('row');
