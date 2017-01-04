@@ -67,7 +67,7 @@
         </div>
     </div>
 
-    @if(count($comments) == 0)
+    @if(count($film->comments) == 0)
         <div class="row">
             <div class="col-xs-12">
                 <p class="bg-warning" style="padding: 15px; font-weight: 400;">
@@ -77,15 +77,15 @@
         </div>
     @endif
 
-    @foreach($comments as $comment)
+    @foreach($film->comments as $comment)
         <div class="row">
             <div class="col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Opinion 1 por /*nombredeusuario*/
+                        Opinión por {{ $comment->user->name }}
                     </div>
                     <div class="panel-body">
-                        <p>Blabla</p>
+                        <p>{{ $comment->text }}</p>
                     </div>
                 </div>
             </div>
