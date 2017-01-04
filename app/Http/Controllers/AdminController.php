@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Laravel\Lumen\Application;
 use Illuminate\Http\Request;
 use App\Film;
 use App\Projection;

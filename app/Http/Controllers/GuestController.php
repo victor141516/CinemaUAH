@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Laravel\Lumen\Application;
 use App\Film;
 
 class GuestController extends Controller
