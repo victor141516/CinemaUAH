@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no" />
-    @yield('meta')
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title')</title>
 
@@ -14,7 +16,7 @@
             padding-top: 70px;
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
     @yield('extra-css')
 </head>
 <body>
@@ -25,6 +27,11 @@
 
     <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    @if ( Config::get('app.debug') )
+        <script type="text/javascript">
+            document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
+        </script>
+    @endif
     @yield('extra-js')
 </body>
 </html>

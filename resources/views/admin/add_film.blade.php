@@ -6,12 +6,12 @@
 
 @section('extra-css')
 <style>
-#holder { border: 10px dashed #ccc; width: 300px; min-height: 400px; margin: 20px auto;}
-#holder.hover { border: 10px dashed #0c0; }
-#holder img { display: block; margin: 10px auto; }
-#holder p { margin: 10px; font-size: 14px; }
-.fail { background: #c00; padding: 2px; color: #fff; }
-.hidden { display: none !important;}
+    #holder { border: 10px dashed #ccc; width: 300px; min-height: 400px; margin: 20px auto;}
+    #holder.hover { border: 10px dashed #0c0; }
+    #holder img { display: block; margin: 10px auto; }
+    #holder p { margin: 10px; font-size: 14px; }
+    .fail { background: #c00; padding: 2px; color: #fff; }
+    .hidden { display: none !important;}
 </style>
 @endsection
 
@@ -20,6 +20,12 @@
 @endsection
 
 @section('content')
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="alert alert-warning hidden"></div>
+        </div>
+    </div>
 
     <form action="add_film" method="post" accept-charset="utf-8">
         {{ csrf_field() }}
@@ -31,7 +37,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-xs-12">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="form-group">
                     <label for="name" class="control-label">Título</label>
                     <input class="form-control" type="text" id="name" name="name">
@@ -61,7 +67,7 @@
                     <input class="form-control" type="text" id="nationality" name="nationality">
                 </div>
             </div>
-            <div class="col-md-4 col-xs-12">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="form-group">
                     <label for="minutes_duration" class="control-label">Duración</label>
                     <input class="form-control" type="number" id="minutes_duration" name="minutes_duration">

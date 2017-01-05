@@ -9,7 +9,7 @@
 @endsection
 
 @section('title')
-    {{ $film->name }}
+    {{ $film->name }} ({{ $film->year }})
 @endsection
 
 @section('navbar')
@@ -67,12 +67,12 @@
         </div>
     </div>
 
-    @if(count($film->comments) == 0)
+    @if(count($film->comments) == 0 && Auth::check())
         <div class="row">
-            <div class="col-xs-12">
-                <p class="bg-warning" style="padding: 15px; font-weight: 400;">
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                <div class="alert alert-warning">
                     Aún no tenemos comentarios para esta película, añade el tuyo :)
-                </p>
+                </div>
             </div>
         </div>
     @endif
@@ -106,6 +106,14 @@
                         <button type="submit" class="btn btn-primary">Añadir comentario</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    @else
+        <div class="row">
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                <div class="alert alert-warning">
+                    <a href="{{ url('auth/login') }}" title="Iniciar sesión"><strong>Inicia sesión</strong></a> o <a href="{{ url('register') }}" title="Registrarse"><strong>regístrate</strong></a> para dejar un comentario.
+                </div>
             </div>
         </div>
     @endif
