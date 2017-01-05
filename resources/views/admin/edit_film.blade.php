@@ -46,8 +46,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="nationality" class="control-label">Nacionalidad</label>
-                    <input class="form-control" type="text" id="nationality" name="nationality" value="{{ $film->nationality }}">
+                    <label for="country" class="control-label">Nacionalidad</label>
+                    <input class="form-control" type="text" id="country" name="country" value="{{ $film->country }}">
                 </div>
             </div>
             <div class="col-md-4 col-xs-12">
@@ -60,8 +60,8 @@
                     <input class="form-control" type="number" id="year" name="year" value="{{ $film->year }}">
                 </div>
                 <div class="form-group">
-                    <label for="distributor" class="control-label">Distribuidora</label>
-                    <input class="form-control" type="text" id="distributor" name="distributor" value="{{ $film->distributor }}">
+                    <label for="producer" class="control-label">Distribuidora</label>
+                    <input class="form-control" type="text" id="producer" name="producer" value="{{ $film->producer }}">
                 </div>
                 <div class="form-group">
                     <label for="Director" class="control-label">Director</label>
@@ -80,8 +80,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="additional_data" class="control-label">Datos</label>
-                    <input class="form-control" type="text" id="additional_data" name="additional_data" value="{{ $film->additional_data }}">
+                    <label for="others" class="control-label">Datos</label>
+                    <input class="form-control" type="text" id="others" name="others" value="{{ $film->others }}">
                 </div>
             </div>
             <div class="col-md-4 col-xs-12">

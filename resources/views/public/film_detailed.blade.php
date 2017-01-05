@@ -30,10 +30,10 @@
         </div>
     </div>
     <div class="row" style="padding-top: 15px;">
-        <div class="col-md-4 col-xs-12 text-center">
+        <div class="col-sm-4 col-xs-12 text-center">
             <img src=@if($film->has_image) "/img/{{ $film->id }}.jpg" @else "/img/default.jpg" @endif alt="{{ $film->name }}">
         </div>
-        <div class="col-md-8 col-xs-12">
+        <div class="col-sm-8 col-xs-12">
             <p>
                 <strong>Sinopsis: </strong>
                 {{ $film->synopsis }}

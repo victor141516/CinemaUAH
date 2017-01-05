@@ -1,7 +1,18 @@
 @extends('master')
 
 @section('title')
-    Añadir / Editar pelicula
+    Crear pelicula
+@endsection
+
+@section('extra-css')
+<style>
+#holder { border: 10px dashed #ccc; width: 300px; min-height: 400px; margin: 20px auto;}
+#holder.hover { border: 10px dashed #0c0; }
+#holder img { display: block; margin: 10px auto; }
+#holder p { margin: 10px; font-size: 14px; }
+.fail { background: #c00; padding: 2px; color: #fff; }
+.hidden { display: none !important;}
+</style>
 @endsection
 
 @section('navbar')
@@ -85,9 +96,20 @@
                 </div>
             </div>
             <div class="col-md-4 col-xs-12">
-                caratula con dragDrop
+                <div id="holder"></div>
+                <p id="upload" class="hidden">
+                    <label>Drag &amp; drop not supported, but you can still upload via this input field:<br>
+                        <input type="file">
+                    </label>
+                </p>
+                <p id="filereader">File API &amp; FileReader API not supported</p>
+                <p id="formdata">XHR2's FormData is not supported</p>
             </div>
         </div>
     </form>
 
+@endsection
+
+@section('extra-js')
+<script src="/js/image-upload.js" type="text/javascript" charset="utf-8" async defer></script>
 @endsection
