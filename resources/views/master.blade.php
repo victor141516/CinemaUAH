@@ -25,8 +25,7 @@
         @yield('content')
     </div>
 
-    <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
     @if ( Config::get('app.debug') )
         <script type="text/javascript">
             document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')

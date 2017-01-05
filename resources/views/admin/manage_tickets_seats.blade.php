@@ -1,9 +1,5 @@
 @extends('master')
 
-@section('meta')
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-@endsection
-
 @section('extra-css')
     <style type="text/css" media="screen">
         .fila {
