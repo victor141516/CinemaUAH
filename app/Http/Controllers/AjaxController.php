@@ -7,6 +7,7 @@ use App\Comment;
 use App\Film;
 use App\Projection;
 use App\Ticket;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AjaxController extends Controller
@@ -46,5 +47,33 @@ class AjaxController extends Controller
 			'film_id' => $request->film_id,
 			'text' => $request->comment])->id;
 		return back();
+	}
+
+	public function adminChangeSeat(Request $request)
+	{
+		$ticket = Ticket::where([
+			'projection_id' => $request->projection,
+			'row' => $request->row,
+			'column' => $request->column,
+		])->first();
+		if (is_null($ticket)) {
+			$ticket = Ticket::create([
+				'projection_id' => $request->projection,
+				'row' => $request->row,
+				'column' => $request->column,
+				'deleted_at' => NULL,
+				'admin_lock' => true
+			]);
+		} else {
+			$update = [
+				'deleted_at' => $request->state == 'free' ? Carbon::now() : NULL,
+			];
+			if ($request->state == 'free') {
+				$update['admin_lock'] = false;
+			}
+			$ticket->update($update);
+		}
+//		dd($ticket);
+		return is_null($ticket->deleted_at) ? 0 : 1;
 	}
 }

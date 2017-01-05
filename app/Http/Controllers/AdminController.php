@@ -111,8 +111,8 @@ class AdminController extends Controller
             $seats[$each->id] = $each->row . '-' . $each->column;
         }
 
-        return view('admin.manage_tickets_projections')
+        return view('admin.manage_tickets_seats')
                 ->withSeats($seats)
-                ->withTheater($projection->theater);
+                ->withProjection($projection);
     }
 }

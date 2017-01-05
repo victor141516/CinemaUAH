@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('comment', 'AjaxController@comment');
     Route::post('api/book', 'AjaxController@bookSeat');
     Route::post('api/pay/{token}', 'AjaxController@paySeat');
+    Route::post('api/change_seat', 'AjaxController@adminChangeSeat');
     
     Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('add_film', 'AdminController@addFilm');

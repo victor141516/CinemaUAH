@@ -2,18 +2,22 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Ticket extends Model
 {
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'user_id', 'cinema_id', 'projection_id', 'row', 'column', 'is_paid', 'token',
+        'user_id', 'cinema_id', 'projection_id', 'row', 'column', 'is_paid', 'token', 'admin_lock', 'deleted_at',
     ];
 
     public function projection()
