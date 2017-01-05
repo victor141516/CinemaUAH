@@ -11,9 +11,16 @@ use Carbon\Carbon;
 
 class AdminController extends Controller
 {
+    public function home()
+    {
+        return view('admin.home');
+    }
+
     public function addFilm()
     {
         return view('admin.add_film')
+                ->withFilm(new Film)
+                ->withActors('')
                 ->withGenres(Film::getGenres())
                 ->withAgeRatings(Film::getAgeRatings());
     }
@@ -114,5 +121,25 @@ class AdminController extends Controller
         return view('admin.manage_tickets_seats')
                 ->withSeats($seats)
                 ->withProjection($projection);
+    }
+
+    public function filmsReport()
+    {
+        return view('admin.films_report');
+    }
+
+    public function theaterReport()
+    {
+        return view('admin.theater_report');
+    }
+
+    public function entriesReport()
+    {
+        return view('admin.entries_report');
+    }
+
+    public function reservationsReport()
+    {
+        return view('admin.reservations_report');
     }
 }

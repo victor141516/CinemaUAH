@@ -12,10 +12,10 @@
 
     @if($theaters->count() == 0)
         <div class="row">
-            <div class="col-xs-12">
-                <p class="bg-warning" style="padding: 15px; font-weight: 400;">
-                    Aún no hay salas disponibles
-                </p>
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                <div class="alert alert-warning">
+                    <strong>¡Atención!</strong> Aún no hay salas disponibles, pulsa <a href="{{ url('admin/add_theater') }}" title="crear sala">aquí</a> para crear una.
+                </div>
             </div>
         </div>
     @endif

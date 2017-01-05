@@ -12,13 +12,13 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <!--Rol User-->
-                <li @if (app('request')->is('films')) class="active" @endif>
+                <li @if (Request::is('films')) class="active" @endif>
                     <a href="{{ url('/') }}">Películas</a>
                 </li>
-                <li @if (app('request')->is('theater')) class="active" @endif>
+                <li @if (Request::is('theater')) class="active" @endif>
                     <a href="{{ url('/theater') }}">Salas</a>
                 </li>
-                <li @if (app('request')->is('reservations')) class="active" @endif>
+                <li @if (Request::is('reservations')) class="active" @endif>
                     <a href="{{ url('/reservations') }}">Consultar reservas</a>
                 </li>
             </ul>

@@ -29,10 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('api/change_seat', 'AjaxController@adminChangeSeat');
 
     Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
-        Route::get('home', function() // TODO - Home admin page with stats?
-        {
-            return redirect('/admin/add_film');
-        });
+        Route::get('home', 'AdminController@home');
         Route::get('add_film', 'AdminController@addFilm');
         Route::get('delete_film/{id}', 'AdminController@deleteFilm');
         Route::post('add_film', 'AdminController@saveFilm');
@@ -51,6 +48,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('manage_tickets/select_theater', 'AdminController@manageTheatersSelectTheater');
         Route::get('manage_tickets/{theater_id}/select_projection', 'AdminController@manageTheatersSelectProjection');
         Route::get('manage_tickets/{projection_id}/select_seats', 'AdminController@manageTheatersSelectSeats');
+
+        Route::get('films_report', 'AdminController@filmsReport');
+        Route::get('theater_report', 'AdminController@theaterReport');
+        Route::get('entries_report', 'AdminController@entriesReport');
+        Route::get('reservations_report', 'AdminController@reservationsReport');
     });
 });
 Auth::routes();

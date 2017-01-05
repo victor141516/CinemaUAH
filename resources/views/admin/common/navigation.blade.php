@@ -12,6 +12,9 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <!--Rol Admin-->
+                <li @if (Request::is('/admin/home')) class="active" @endif>
+                    <a href="{{ url('/admin/home') }}">Home</a>
+                </li>
                 <li role="presentation" @if (Request::is('admin/add_film') || Request::is('admin/manage_films')) class="active" @endif>
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
                         Peliculas <span class="caret"></span>
@@ -43,7 +46,7 @@
                         Reservas <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li role="presentation" @if (Request::is('admin/manage_tickets')) class="active" @endif>
+                        <li role="presentation" @if (Request::is('admin/manage_tickets/select_theater')) class="active" @endif>
                             <a href="{{ url('admin/manage_tickets/select_theater') }}">Administrar reservas</a>
                         </li>
                     </ul>

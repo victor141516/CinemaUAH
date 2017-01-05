@@ -11,12 +11,41 @@
 
     <link href="{{ url('favicon/favicon.ico') }}" rel="icon" type="image/x-icon" />
 
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
     <style type="text/css" media="screen">
         body {
             padding-top: 70px;
         }
+        a {
+            color: #424242;
+        }
+        .film {
+            min-height: 340px;
+        }
+
+        /* Add/Edit film */
+        #holder {
+            border: 10px dashed #ccc;
+            width: 300px;
+            min-height: 400px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #holder.hover {
+            border: 10px dashed #0c0;
+        }
+        #holder img {
+            display: block; margin: 10px auto;
+        }
+        #holder p {
+            margin: 10px; font-size: 14px;
+        }
+        .fail {
+            background: #c00; padding: 2px; color: #fff;
+        }
     </style>
-    <link rel="stylesheet" type="text/css" href="/css/app.css">
     @yield('extra-css')
 </head>
 <body>

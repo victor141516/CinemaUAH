@@ -1,16 +1,13 @@
 @extends('master')
 
 @section('title')
-    Películas
+    Crear pelicula
 @endsection
 
 @section('navbar')
-    @include('public.common.navigation')
+    @include('admin.common.navigation')
 @endsection
 
 @section('content')
 
-    @include('common.film_list')
-
 @endsection
-
