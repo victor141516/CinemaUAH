@@ -25,7 +25,9 @@ class CreateTicketsTable extends Migration
             $table->unsignedInteger('row');
             $table->unsignedInteger('column');
             $table->boolean('is_paid')->default(false);
+            $table->boolean('admin_lock')->default(false);
             $table->string('token', 23)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
