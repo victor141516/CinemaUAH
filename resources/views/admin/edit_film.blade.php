@@ -30,7 +30,7 @@
     <script src="/js/image-upload.js" type="text/javascript" charset="utf-8" async defer></script>
     <script type="text/javascript">
         $('.confirmation').on('click', function () {
-            return confirm('Are you sure?');
+            return confirm('Vas a borrar esta película, ¿estás seguro?');
         });
     </script>
 @endsection

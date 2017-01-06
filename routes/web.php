@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('api/change_seat', 'AjaxController@adminChangeSeat');
 
     Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get('/', function() { return redirect('/admin/home'); });
         Route::get('home', 'AdminController@home');
         Route::get('add_film', 'AdminController@addFilm');
         Route::get('delete_film/{id}', 'AdminController@deleteFilm');

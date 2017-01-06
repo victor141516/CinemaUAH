@@ -33,7 +33,8 @@ class AdminController extends Controller
 
     public function deleteFilm($id)
     {
-        Film::delete($id);
+        // TODO: elimiar relaciones
+        Film::where('id', $id)->first();
 
         return redirect('admin/manage_films');
     }
