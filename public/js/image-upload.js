@@ -1,28 +1,28 @@
-var holder = document.getElementById('holder'),
+var holder = $('#holder'),
     tests = {
       filereader: typeof FileReader != 'undefined',
       dnd: 'draggable' in document.createElement('span'),
       formdata: !!window.FormData
     },
     support = {
-      filereader: document.getElementById('filereader'),
-      formdata: document.getElementById('formdata')
+      filereader: $('#filereader'),
+      formdata: $('#formdata')
     },
     acceptedTypes = {
       'image/png': true,
       'image/jpeg': true,
       'image/gif': true
     },
-    fileupload = document.getElementById('upload');
+    fileupload = $('#upload');
 "filereader formdata".split(' ').forEach(function (api) {
   if (tests[api] === false) {
-    support[api].className = 'fail';
+    support[api].attr('class', 'fail');
   } else {
     // FFS. I could have done el.hidden = true, but IE doesn't support
     // hidden, so I tried to create a polyfill that would extend the
     // Element.prototype, but then IE10 doesn't even give me access
     // to the Element object. Brilliant.
-    support[api].className = 'hidden';
+    support[api].attr('class', 'hidden');
   }
 });
 function previewfile(file) {
@@ -31,51 +31,41 @@ function previewfile(file) {
     reader.onload = function (event) {
       var image = new Image();
       image.src = event.target.result;
-      image.width = 250; // a fake resize
-      holder.appendChild(image);
+      image.width = 250; // a fake resiz
+      holder.html(image);
     };
     reader.readAsDataURL(file);
   }  else {
-    holder.innerHTML += '<p>Uploaded ' + file.name + ' ' + (file.size ? (file.size/1024|0) + 'K' : '');
-    console.log(file);
+    holder.append('<p>Carátula subida (:</p>');
   }
 }
 function readfiles(files) {
-    debugger;
+    // debugger;
     var formData = tests.formdata ? new FormData() : null;
-    for (var i = 0; i < files.length; i++) {
-      if (tests.formdata) formData.append('file', files[i]);
-      previewfile(files[i]);
+
+    if (files.length > 1) {
+        var warning = $('.alert-warning');
+        warning.html('<strong>Atención!</strong> Sólo se permite una imagen.');
+        warning.css('display', '');
+        warning.delay(4000).fadeOut();
+    } else {
+        if (tests.formdata) formData.append('file', files[0]);
+        previewfile(files[0]);
     }
+
     // now post a new XHR request
     if (tests.formdata) {
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', '/devnull.php');
-      xhr.onload = function() {
-        progress.value = progress.innerHTML = 100;
-      };
-      if (tests.progress) {
-        xhr.upload.onprogress = function (event) {
-          if (event.lengthComputable) {
-            var complete = (event.loaded / event.total * 100 | 0);
-            progress.value = progress.innerHTML = complete;
-          }
-        }
-      }
+      xhr.open('POST', '/add_film_image/');
       xhr.send(formData);
     }
 }
 if (tests.dnd) {
-  holder.ondragover = function () { this.className = 'hover'; return false; };
-  holder.ondragend = function () { this.className = ''; return false; };
-  holder.ondrop = function (e) {
+  holder[0].ondragover = function () { this.className = 'hover'; return false; };
+  holder[0].ondragend = function () { this.className = ''; return false; };
+  holder[0].ondrop = function (e) {
     this.className = '';
     e.preventDefault();
     readfiles(e.dataTransfer.files);
   }
-} else {
-  fileupload.className = 'hidden';
-  fileupload.querySelector('input').onchange = function () {
-    readfiles(this.files);
-  };
 }

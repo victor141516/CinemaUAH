@@ -1,13 +1,5 @@
 @extends('master')
 
-@section('extra-css')
-    <style type="text/css" media="screen">
-        .film {
-            min-height: 340px;
-        }
-    </style>
-@endsection
-
 @section('title')
     Películas
 @endsection
@@ -17,18 +9,21 @@
 @endsection
 
 @section('content')
+    @include('messages.error')
+    @include('messages.warning')
+    @include('messages.success')
 
-    <div class="jumbotron">
+    @if($films->count() == 0)
         <div class="row">
-            @foreach($films as $film)
-                <div class="col-md-3 col-sm-6 col-xs-12 text-center film">
-                    <a href="{{ url('admin/edit_film/'.$film->id) }}">
-                        <img src=@if($film->has_image) "/img/{{ $film->id }}.jpg" @else "/img/default.jpg" @endif alt="">
-                        <h4>{{ $film->name }}</h4>
-                    </a>
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                <div class="alert alert-warning">
+                    <strong>¡Atención!</strong> Aún no hay películas disponibles, pulsa <a href="{{ url('admin/add_film') }}" title="crear película">aquí</a> para crear una.
                 </div>
-            @endforeach
+            </div>
         </div>
-    </div>
+    @endif
+
+    @include('common.film_list')
+
 @endsection
 
