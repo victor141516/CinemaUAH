@@ -34,6 +34,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('add_film', 'AdminController@addFilm');
         Route::get('delete_film/{id}', 'AdminController@deleteFilm');
         Route::post('add_film', 'AdminController@saveFilm');
+        Route::post('placeholder_film', 'AdminController@placeholderFilm');/////////////////////
+        Route::post('film_image', 'AjaxController@editFilmImage');//////////////////////////////
         Route::get('edit_film/{id}', 'AdminController@editFilm');
         Route::post('edit_film/{id}', 'AdminController@saveFilm');
         Route::get('manage_films', 'AdminController@manageFilms');
