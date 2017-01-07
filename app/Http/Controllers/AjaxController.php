@@ -78,15 +78,4 @@ class AjaxController extends Controller
 		}
 		return is_null($ticket->deleted_at) ? 0 : 1;
 	}
-
-	public function deleteProjection(Request $request, $projection_id)
-	{
-		if ($request->user()->role != 'admin') {
-			return abort(403);
-		}
-		$projection = Projection::find($projection_id);
-		$projection->tickets()->delete();
-		$projection->delete();
-		return 0;
-	}
 }

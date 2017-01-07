@@ -5,8 +5,8 @@
         a {
             color: #424242;
         }
-        .film {
-            min-height: 340px;
+        .projection {
+            min-height: 100px;
         }
     </style>
 @endsection
@@ -23,11 +23,12 @@
 
     <div class="row">
         @foreach($projections as $projection)
-            <div class="col-md-3 col-sm-4 col-xs-12 text-center film">
+            <div class="col-md-3 col-sm-4 col-xs-12 text-center projection">
                 <a href="{{ url('admin/manage_tickets/' . $projection->id . '/select_seats') }}">
-                    <img src=@if($projection->film->has_image) "/img/{{ $projection->film->id }}.jpg" @else "/img/default.jpg" @endif alt="">
-                    <h4>{{ $projection->film->name }} ({{ $projection->begin }})</h4>
+                    <p>{{ $projection->begin }}</p>
+                    <p>{{ $projection->theater->name }}</p>
                 </a>
+                <a href="{{ url('admin/delete_projection/' . $projection->id) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
             </div>
         @endforeach
     </div>

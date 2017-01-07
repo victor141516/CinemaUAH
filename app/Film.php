@@ -36,7 +36,7 @@ class Film extends Model
 
     public function projections()
     {
-        return $this->hasMany('App\Projections');
+        return $this->hasMany('App\Projection');
     }
 
     public static function getGenres()

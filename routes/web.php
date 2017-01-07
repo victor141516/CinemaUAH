@@ -48,9 +48,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('edit_theater/{id}', 'AdminController@saveTheater');
         Route::get('manage_theaters', 'AdminController@manageTheaters');
 
-        Route::get('admin/manage_projections/{id}', 'AdminController@manageProjections');
-        Route::post('admin/delete_projection/{id}', 'AjaxController@deleteProjection');
-        Route::post('admin/manage_projections/{id}', 'AdminController@saveProjection');
+        Route::get('manage_projections/{id}', 'AdminController@manageProjections');
+        Route::get('delete_projection/{id}', 'AdminController@deleteProjection');
+        Route::post('manage_projections/{id}', 'AdminController@saveProjection');
 
         Route::get('manage_tickets/select_theater', 'AdminController@manageTheatersSelectTheater');
         Route::get('manage_tickets/{theater_id}/select_projection', 'AdminController@manageTheatersSelectProjection');

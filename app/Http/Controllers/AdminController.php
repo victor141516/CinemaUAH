@@ -127,11 +127,11 @@ class AdminController extends Controller
 
     public function manageProjections($film_id)
     {
-        $film = Film::find($film_id)->with('projections');
+        $projections = Projection::with('theater')->where('film_id', $film_id)->get();
         $theaters = Theater::all();
 
         return view('admin.manage_projections')
-            ->withFilm($film)
+            ->withProjections($projections)
             ->withTheaters($theaters);
     }
 
@@ -144,6 +144,14 @@ class AdminController extends Controller
         } else {
             return back()->withError('Error al guardar el cambio.');
         }
+    }
+
+    public function deleteProjection(Request $request, $projection_id)
+    {
+        $projection = Projection::find($projection_id);
+        $projection->tickets()->forceDelete();
+        $projection->delete();
+        return back();
     }
 
     public function filmsReport()
