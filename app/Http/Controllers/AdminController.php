@@ -94,18 +94,17 @@ class AdminController extends Controller
     public function manageTheatersSelectTheater()
     {
         $theaters = Theater::paginate(10);
+
         return view('admin.manage_tickets_theaters')->withTheaters($theaters);
     }
 
-    public function manageTheatersSelectProjection($theater_id = false)
+    public function manageTheatersSelectProjection()
     {
-        if (!$theater_id) {
-            return error(403);
-        }
-        $projections = Theater::find($theater_id)->projections()->with('film')->get();
+        $theaters = Projection::with('theater')->with('film')->get()->groupBy('theater_id');
+        // dd($theaters->first()->first()->theater->name);
 
         return view('admin.manage_tickets_projections')
-                ->withProjections($projections);
+                ->withTheaters($theaters);
     }
 
     public function manageTheatersSelectSeats($projection_id = false)
@@ -141,7 +140,7 @@ class AdminController extends Controller
     public function saveProjection(Request $request, $film_id)
     {
         $projection = Film::find($film_id)->projections()->create($request->all());
-        
+
         if ($projection) {
             return back();
         } else {
