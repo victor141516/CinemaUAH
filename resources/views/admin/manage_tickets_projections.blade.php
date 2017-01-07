@@ -16,7 +16,7 @@
 @endsection
 
 @section('navbar')
-    @include('public.common.navigation')
+    @include('admin.common.navigation')
 @endsection
 
 @section('content')
