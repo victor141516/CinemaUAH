@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
-                    <a href="{{ url('admin/manage_projections/'. $film->id) }}" class="btn btn-primary">Proyecciones</a>
+                    <a href="{{ url('admin/manage_projections/'. $film->id) }}" class="btn btn-info">Proyecciones</a>
                     <a href="{{ url('admin/delete_film/'. $film->id) }}" class="btn btn-danger confirmation">Borrar</a>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>

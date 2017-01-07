@@ -52,8 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('delete_projection/{id}', 'AdminController@deleteProjection');
         Route::post('manage_projections/{id}', 'AdminController@saveProjection');
 
-        Route::get('manage_tickets/select_theater', 'AdminController@manageTheatersSelectTheater');
-        Route::get('manage_tickets/{theater_id}/select_projection', 'AdminController@manageTheatersSelectProjection');
+        Route::get('manage_tickets/select_projection', 'AdminController@manageTheatersSelectProjection');
         Route::get('manage_tickets/{projection_id}/select_seats', 'AdminController@manageTheatersSelectSeats');
 
         Route::get('films_report/{group}', 'AdminController@filmsReport');

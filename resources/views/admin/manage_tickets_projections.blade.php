@@ -16,18 +16,22 @@
 @endsection
 
 @section('navbar')
-    @include('public.common.navigation')
+    @include('admin.common.navigation')
 @endsection
 
 @section('content')
 
     <div class="row">
-        @foreach($projections as $projection)
-            <div class="col-md-3 col-sm-4 col-xs-12 text-center film">
-                <a href="{{ url('admin/manage_tickets/' . $projection->id . '/select_seats') }}">
-                    <img src=@if($projection->film->has_image) "/img/{{ $projection->film->id }}.jpg" @else "/img/default.jpg" @endif alt="">
-                    <h4>{{ $projection->film->name }} ({{ $projection->begin }})</h4>
-                </a>
+        @foreach($theaters as $projections)
+            <div class="col-sm-6 col-xs-12">
+                <ul class="list-group">
+                    <a class="list-group-item active" href="#" title="Editar proyección">{{ $projections->first()->theater->name }}</a>
+                    @foreach($projections as $projection)
+                        <a class="list-group-item" href="{{ url('admin/manage_tickets/' . $projection->id . '/select_seats') }}">
+                            <strong>{{ $projection->film->name }}</strong> ({{ $projection->begin }})
+                        </a>
+                    @endforeach
+                </ul>
             </div>
         @endforeach
     </div>
