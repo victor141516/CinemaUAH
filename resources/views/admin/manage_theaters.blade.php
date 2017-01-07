@@ -21,10 +21,12 @@
     @endif
 
     <div class="row">
-        @foreach($theaters as $theater)
-            <div class="col-md-1 col-sm-3 col-xs-12 text-center">
-                <a href="{{ url('admin/edit_theater/'. $theater->id) }}" title="Editar sala">{{ $theater->name }}</a>
-            </div>
-        @endforeach
+        <div class="col-sm-4 col-sm-offset-4 col-xs-12">
+            <ul class="list-group">
+                @foreach($theaters as $theater)
+                    <a class="list-group-item" href="{{ url('admin/edit_theater/'. $theater->id) }}" title="Editar sala">{{ $theater->name }}</a>
+                @endforeach
+            </ul>
+        </div>
     </div>
 @endsection

@@ -30,7 +30,7 @@
 @endsection
 
 @section('content')
-    <div class="jumbotron">
+
         <div class="row">
             <div class="col-xs-12" id="theater">
                 <div class="row text-center" style="background-color: grey;">
@@ -38,14 +38,14 @@
                 </div>
                 @for ($i = 0; $i <= $projection->theater->n_rows; $i++)
                     <div class="row fila" id="fila{{ $i }}">
-                    @for ($j = 0; $j <= $projection->theater->n_columns; $j++)
-                        <div class="columna text-center @if(in_array($i . '-' . $j, $seats)) taken @else free @endif {{ 'seat-' . $i . '-' . $j }}" id="columna{{ $j }}"></div>
-                    @endfor
-                </div>
+                        @for ($j = 0; $j <= $projection->theater->n_columns; $j++)
+                            <div class="columna text-center @if(in_array($i . '-' . $j, $seats)) taken @else free @endif {{ 'seat-' . $i . '-' . $j }}" id="columna{{ $j }}"></div>
+                        @endfor
+                    </div>
                 @endfor
             </div>
         </div>
-    </div>
+
 @endsection
 
 @section('extra-js')
