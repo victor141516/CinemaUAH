@@ -129,9 +129,12 @@ class AdminController extends Controller
     {
         $projections = Projection::with('theater')->where('film_id', $film_id)->get();
         $theaters = Theater::all();
+        $films = Film::all();
 
         return view('admin.manage_projections')
+            ->withFilmId($film_id)
             ->withProjections($projections)
+            ->withFilms($films)
             ->withTheaters($theaters);
     }
 

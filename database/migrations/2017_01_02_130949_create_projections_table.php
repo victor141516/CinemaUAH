@@ -23,6 +23,7 @@ class CreateProjectionsTable extends Migration
             $table->foreign('theater_id')->references('id')->on('theaters');
 
             $table->datetime('begin');
+            $table->timestamps();
         });
     }
 
