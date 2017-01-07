@@ -17,5 +17,6 @@ require('laravel-elixir-livereload');
 elixir((mix) => {
     mix.sass('app.scss')
        .webpack('app.js');
+    mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/', 'public/fonts/bootstrap');
     mix.livereload();
 });
