@@ -157,23 +157,33 @@ class AdminController extends Controller
         return back();
     }
 
-    public function filmsReport()
+    public function filmsReport($group = 'genre')
     {
-        return view('admin.films_report');
+        $films = Film::with('tickets')
+            ->with('actors')
+            ->with('comments')
+            ->with('projections')
+            ->get()->groupBy($group);
+
+        return view('admin.films_report')
+            ->withGroup($group)
+            ->withFilms($films);
     }
 
     public function theaterReport()
     {
-        return view('admin.theater_report');
+        $theaters = Theater::with('projections')->get();
+
+        return view('admin.theater_report')
+            ->withTheaters($theaters);
     }
 
-    public function entriesReport()
+    public function ticketReport($group = 'projection_id')
     {
+        $tickets = Ticket::with('projections')
+            ->with('user')
+            ->get()->groupBy($group);
+
         return view('admin.entries_report');
-    }
-
-    public function reservationsReport()
-    {
-        return view('admin.reservations_report');
     }
 }
