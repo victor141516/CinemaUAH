@@ -30,7 +30,7 @@ class AjaxController extends Controller
 		return $ticket->token;
 	}
 
-	public function paySeat($token = false)
+	public function paySeat(Request $request, $token = false)
 	{
 		$ticket = Ticket::where('token', $token)->first();
 		if ($ticket) {
@@ -51,6 +51,9 @@ class AjaxController extends Controller
 
 	public function adminChangeSeat(Request $request)
 	{
+		if ($request->user()->role != 'admin') {
+			return abort(403);
+		}
 		$ticket = Ticket::where([
 			'projection_id' => $request->projection,
 			'row' => $request->row,
@@ -73,7 +76,17 @@ class AjaxController extends Controller
 			}
 			$ticket->update($update);
 		}
-//		dd($ticket);
 		return is_null($ticket->deleted_at) ? 0 : 1;
+	}
+
+	public function deleteProjection(Request $request, $projection_id)
+	{
+		if ($request->user()->role != 'admin') {
+			return abort(403);
+		}
+		$projection = Projection::find($projection_id);
+		$projection->tickets()->delete();
+		$projection->delete();
+		return 0;
 	}
 }

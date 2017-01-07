@@ -13,7 +13,8 @@ class AdminController extends Controller
 {
     public function home()
     {
-        return view('admin.home');
+        return redirect('/admin/add_film');
+        //return view('admin.home');
     }
 
     public function addFilm()
@@ -122,6 +123,24 @@ class AdminController extends Controller
         return view('admin.manage_tickets_seats')
                 ->withSeats($seats)
                 ->withProjection($projection);
+    }
+
+    public function manageProjections($film_id)
+    {
+        $film = Film::find($film_id)->with('projections');
+        return view('admin.manage_projections')
+            ->withFilm($film);
+    }
+
+    public function saveProjection(Request $request, $film_id)
+    {
+        $projection = Film::find($film_id)->projections()->create($request->all());
+        
+        if ($projection) {
+            return back();
+        } else {
+            return back()->withError('Error al guardar el cambio.');
+        }
     }
 
     public function filmsReport()
