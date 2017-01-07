@@ -35,6 +35,11 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            @if(Auth::user()->role == 'admin')
+                                <li>
+                                    <a href="{{ url('/admin/home') }}">Panel admin</a>
+                                </li>
+                            @endif
                             <li>
                                 <a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault();
