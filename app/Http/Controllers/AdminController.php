@@ -128,8 +128,11 @@ class AdminController extends Controller
     public function manageProjections($film_id)
     {
         $film = Film::find($film_id)->with('projections');
+        $theaters = Theater::all();
+
         return view('admin.manage_projections')
-            ->withFilm($film);
+            ->withFilm($film)
+            ->withTheaters($theaters);
     }
 
     public function saveProjection(Request $request, $film_id)
