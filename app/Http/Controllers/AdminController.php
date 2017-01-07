@@ -91,17 +91,9 @@ class AdminController extends Controller
         return redirect("#");
     }
 
-    public function manageTheatersSelectTheater()
-    {
-        $theaters = Theater::paginate(10);
-
-        return view('admin.manage_tickets_theaters')->withTheaters($theaters);
-    }
-
     public function manageTheatersSelectProjection()
     {
         $theaters = Projection::with('theater')->with('film')->get()->groupBy('theater_id');
-        // dd($theaters->first()->first()->theater->name);
 
         return view('admin.manage_tickets_projections')
                 ->withTheaters($theaters);
