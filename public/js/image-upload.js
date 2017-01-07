@@ -49,15 +49,18 @@ function readfiles(files) {
         warning.css('display', '');
         warning.delay(4000).fadeOut();
     } else {
-        if (tests.formdata) formData.append('file', files[0]);
+        if (tests.formdata) formData.append('image', files[0]);
+        formData.append('film_id', $("#id").val());
         previewfile(files[0]);
     }
 
     // now post a new XHR request
     if (tests.formdata) {
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', '/add_film_image/');
+      xhr.open('POST', '/admin/film_image');
+      xhr.setRequestHeader("X-CSRF-TOKEN", $('meta[name="csrf-token"]').attr('content'));
       xhr.send(formData);
+      $("#has_image").val("1");
     }
 }
 if (tests.dnd) {

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use File;
+use Image;
 use App\Comment;
 use App\Film;
 use App\Projection;
@@ -77,5 +79,39 @@ class AjaxController extends Controller
 			$ticket->update($update);
 		}
 		return is_null($ticket->deleted_at) ? 0 : 1;
+	}
+
+	public function placeholderFilm(Request $request)
+	{
+		if ($request->user()->role != 'admin') {
+			return abort(403);
+		}
+		$data = $request->all();
+		$data['deleted_at'] = Carbon::now();
+		$film = Film::create($data);
+		return $film->id;
+	}
+
+	public function editFilmImage(Request $request)
+	{
+        if (!($request->hasFile('image') and $request->file('image')->isValid())) {
+        	return -1;
+        }
+        $path = 'img/films/';
+		$fFormat = 'jpg';
+		$quality = 80;
+		$filename = $request->film_id;	
+
+		$imgname = $filename . '.' . $fFormat;
+        File::delete($path . $imgname);
+
+        if ($request->file('image')->move($path, $imgname)) {
+        	if (Image::make($path . $imgname)->resize(null, 275, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save()) {
+        		return 1;
+        	}
+        	return 0;
+        }
 	}
 }

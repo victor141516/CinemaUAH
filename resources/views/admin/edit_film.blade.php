@@ -33,5 +33,7 @@
         $('.confirmation').on('click', function () {
             return confirm('Vas a borrar esta película, ¿estás seguro?');
         });
+        $(".image-place").removeClass('hidden');
+        
     </script>
 @endsection

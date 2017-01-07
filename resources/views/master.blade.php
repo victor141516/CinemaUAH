@@ -22,6 +22,9 @@
         .film {
             min-height: 340px;
         }
+        .hidden {
+            display: none;
+        }
 
         /* Add/Edit film */
         #holder {

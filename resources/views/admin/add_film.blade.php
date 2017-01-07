@@ -34,4 +34,23 @@
 
 @section('extra-js')
     <script src="/js/image-upload.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script type="text/javascript">
+        $("#name").bind('input', function() {
+            if (!($(this).hasClass('done'))) {
+                $(this).addClass('done');
+                $.ajax({
+                    url: 'placeholder_film',
+                    type: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {'name': $(this).val()},
+                })
+                .done(function(film_id) {
+                    $("#id").val(film_id);
+                    $(".image-place").removeClass('hidden');
+                });    
+            }
+        });
+    </script>
 @endsection

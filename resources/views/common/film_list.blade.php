@@ -6,7 +6,7 @@
         @else
             <a href="{{ url('admin/edit_film/'.$film->id) }}">
         @endif
-                <img src=@if($film->has_image) "/img/{{ $film->id }}.jpg" @else "/img/default.jpg" @endif alt="">
+                <img src=@if($film->has_image) "/img/films/{{ $film->id }}.jpg" @else "/img/default.jpg" @endif alt="">
                 <h4>{{ $film->name }}</h4>
             </a>
         </div>

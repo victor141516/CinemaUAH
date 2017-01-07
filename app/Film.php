@@ -2,11 +2,14 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Actor;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Film extends Model
 {
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +20,7 @@ class Film extends Model
         'id','name','synopsis','website','original_title',
         'genre','country','minutes_duration','year',
         'producer','director','age_rating','others',
-        'has_image',];
+        'has_image', 'deleted_at'];
 
     public function tickets()
     {
@@ -58,7 +61,8 @@ class Film extends Model
                 $actors[] = Actor::updateOrCreate(['name' => trim($each)])->id;
             }
         }
-        $film = self::updateOrCreate($compare, $request->all());
+        $film = self::withTrashed()->updateOrCreate($compare, $request->all());
+        $film->restore();
         $film->actors()->sync($actors);
         return $film;
     }

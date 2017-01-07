@@ -28,7 +28,7 @@ class AdminController extends Controller
 
     public function saveFilm(Request $request, $id = false)
     {
-        Film::updateOrCreateWithActors(['id' => $id], $request);
+        Film::updateOrCreateWithActors(['id' => $request->has('id') ? $request->id : $id], $request);
         return redirect("#");
     }
 

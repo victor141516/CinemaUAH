@@ -52,7 +52,7 @@
                     <p>{{ $projection->begin }}</p>
                     <p>{{ $projection->theater->name }}</p>
                 </a>
-                <a href="{{ url('admin/delete_projection/' . $projection->id) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                <a href="{{ url('admin/delete_projection/' . $projection->id) }}" class="btn btn-danger">Borrar</span></a>
             </div>
         @endforeach
     </div>

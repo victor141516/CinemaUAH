@@ -64,11 +64,14 @@
             <label for="others" class="control-label">Datos</label>
             <input class="form-control" type="text" id="others" name="others" value="{{ $film->others }}">
         </div>
+        <input type="hidden" name="id" id="id" value={{ @(isset($film)) ? $film->id : "placeholder"}}>
+        <input type="hidden" name="has_image" id="has_image" value={{ isset($film) ? ($film->has_image ? "1" : "0") : "0" }}>
+        {{ csrf_field() }}
     </div>
-    <div class="col-md-4 col-sm-12">
+    <div class="col-md-4 col-sm-12 hidden image-place">
         <div id="holder">
             @if($film->has_image)
-                <img src="/img/{{ $film->id }}.jpg" alt="{{ $film->name }}">
+                <img src="/img/films/{{ $film->id }}.jpg" alt="{{ $film->name }}">
             @else
                 <p>Suelta la carátula aquí</p>
             @endif

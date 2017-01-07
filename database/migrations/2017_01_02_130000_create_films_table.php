@@ -16,18 +16,20 @@ class CreateFilmsTable extends Migration
         Schema::create('films', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('synopsis', 5000);
+            $table->string('synopsis', 5000)->nullable();
             $table->string('website')->nullable();
-            $table->string('original_title');
-            $table->string('genre');
-            $table->string('country');
-            $table->unsignedInteger('minutes_duration');
-            $table->unsignedInteger('year');
-            $table->string('producer');
-            $table->string('director');
-            $table->string('age_rating');
-            $table->string('others');
-            $table->boolean('has_image');
+            $table->string('original_title')->nullable();
+            $table->string('genre')->nullable();
+            $table->string('country')->nullable();
+            $table->unsignedInteger('minutes_duration')->nullable();
+            $table->unsignedInteger('year')->nullable();
+            $table->string('producer')->nullable();
+            $table->string('director')->nullable();
+            $table->string('age_rating')->nullable();
+            $table->string('others')->nullable();
+            $table->boolean('has_image')->default(false);
+            $table->boolean('placeholder')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
 
