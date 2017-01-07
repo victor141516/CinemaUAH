@@ -56,10 +56,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('manage_tickets/{theater_id}/select_projection', 'AdminController@manageTheatersSelectProjection');
         Route::get('manage_tickets/{projection_id}/select_seats', 'AdminController@manageTheatersSelectSeats');
 
-        Route::get('films_report', 'AdminController@filmsReport');
+        Route::get('films_report/{group}', 'AdminController@filmsReport');
         Route::get('theater_report', 'AdminController@theaterReport');
-        Route::get('entries_report', 'AdminController@entriesReport');
-        Route::get('reservations_report', 'AdminController@reservationsReport');
+        Route::get('tickets_report/{group}', 'AdminController@ticketsReport');
     });
 });
 Auth::routes();
