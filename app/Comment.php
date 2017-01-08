@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Comment extends Model
 {
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
 
     /**
      * The attributes that are mass assignable.
@@ -13,7 +16,7 @@ class Comment extends Model
      * @var array
      */
     protected $fillable = [
-        'text', 'user_id', 'film_id',
+        'text', 'user_id', 'film_id', 'deleted_at',
     ];
 
     public function user()

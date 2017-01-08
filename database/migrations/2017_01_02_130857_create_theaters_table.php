@@ -18,6 +18,7 @@ class CreateTheatersTable extends Migration
             $table->string('name');
             $table->unsignedInteger('n_rows');
             $table->unsignedInteger('n_columns');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

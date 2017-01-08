@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', 'GuestController@showFilms');
 Route::get('/film/{id}', 'GuestController@showFilmDetailed');
 Route::get('/seats/{id}', 'GuestController@showSeatBooking');
@@ -31,33 +20,36 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/', function() { return redirect('/admin/home'); });
         Route::get('home', 'AdminController@home');
-        Route::get('add_film', 'AdminController@addFilm');
-        Route::get('delete_film/{id}', 'AdminController@deleteFilm');
-        Route::post('add_film', 'AdminController@saveFilm');
-        Route::post('placeholder_film', 'AjaxController@placeholderFilm');/////////////////////
-        Route::post('film_image', 'AjaxController@editFilmImage');//////////////////////////////
-        Route::get('edit_film/{id}', 'AdminController@editFilm');
-        Route::post('edit_film/{id}', 'AdminController@saveFilm');
-        Route::get('manage_films', 'AdminController@manageFilms');
-        Route::get('manage_theaters', 'AdminController@manageTheaters');
-        Route::get('delete_theater/{id}', 'AdminController@deleteTheaters');
 
-        Route::get('add_theater', 'AdminController@addTheater');
-        Route::post('add_theater', 'AdminController@saveTheater');
-        Route::get('edit_theater/{id}', 'AdminController@editTheater');
-        Route::post('edit_theater/{id}', 'AdminController@saveTheater');
-        Route::get('manage_theaters', 'AdminController@manageTheaters');
+        //Films
+        Route::get('add_film', 'Admin\FilmController@add');
+        Route::post('add_film', 'Admin\FilmController@save');
+        Route::post('placeholder_film', 'AjaxController@placeholderFilm');
+        Route::get('manage_films', 'Admin\FilmController@manage');
+        Route::get('edit_film/{id}', 'Admin\FilmController@edit');
+        Route::post('edit_film/{id}', 'Admin\FilmController@save');
+        Route::get('delete_film/{id}', 'Admin\FilmController@delete');
+        Route::post('film_image', 'AjaxController@editFilmImage');
+        Route::get('films_report/{group}', 'Admin\FilmController@report');
+        
+        //Theater
+        Route::get('add_theater', 'Admin\TheaterController@add');
+        Route::post('add_theater', 'Admin\TheaterController@save');
+        Route::get('manage_theaters', 'Admin\TheaterController@manage');
+        Route::get('edit_theater/{id}', 'Admin\TheaterController@edit');
+        Route::post('edit_theater/{id}', 'Admin\TheaterController@save');
+        Route::get('delete_theater/{id}', 'Admin\TheaterController@delete');
+        Route::get('theater_report', 'Admin\TheaterController@report');
 
-        Route::get('manage_projections/{id}', 'AdminController@manageProjections');
-        Route::get('delete_projection/{id}', 'AdminController@deleteProjection');
-        Route::post('manage_projections/{id}', 'AdminController@saveProjection');
+        //Projections        
+        Route::get('manage_projections/{id}', 'Admin\ProjectionController@manage');
+        Route::post('manage_projections/{id}', 'Admin\ProjectionController@save');
+        Route::get('delete_projection/{id}', 'Admin\ProjectionController@delete');
 
-        Route::get('manage_tickets/select_projection', 'AdminController@manageTheatersSelectProjection');
-        Route::get('manage_tickets/{projection_id}/select_seats', 'AdminController@manageTheatersSelectSeats');
-
-        Route::get('films_report/{group}', 'AdminController@filmsReport');
-        Route::get('theater_report', 'AdminController@theaterReport');
-        Route::get('tickets_report/{group}', 'AdminController@ticketsReport');
+        //Tickets
+        Route::get('manage_tickets', 'Admin\TicketController@manage');
+        Route::get('manage_tickets/{projection_id}', 'Admin\TicketController@seats');
+        Route::get('tickets_report/{group}', 'Admin\TicketController@report');
     });
 });
 Auth::routes();

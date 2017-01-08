@@ -27,7 +27,7 @@
                 <ul class="list-group">
                     <a class="list-group-item active" href="#" title="Editar proyección">{{ $projections->first()->theater->name }}</a>
                     @foreach($projections as $projection)
-                        <a class="list-group-item" href="{{ url('admin/manage_tickets/' . $projection->id . '/select_seats') }}">
+                        <a class="list-group-item" href="{{ url('admin/manage_tickets/' . $projection->id) }}">
                             <strong>{{ $projection->film->name }}</strong> ({{ $projection->begin }})
                         </a>
                     @endforeach

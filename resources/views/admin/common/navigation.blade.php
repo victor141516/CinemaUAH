@@ -46,8 +46,8 @@
                         Reservas <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li role="presentation" @if (Request::is('admin/manage_tickets/select_projection')) class="active" @endif>
-                            <a href="{{ url('admin/manage_tickets/select_projection') }}">Administrar reservas</a>
+                        <li role="presentation" @if (Request::is('admin/manage_tickets')) class="active" @endif>
+                            <a href="{{ url('admin/manage_tickets') }}">Administrar reservas</a>
                         </li>
                     </ul>
                 </li>

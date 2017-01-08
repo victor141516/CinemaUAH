@@ -4,9 +4,12 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Projection extends Model
 {
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
 
     /**
      * The attributes that are mass assignable.
@@ -14,7 +17,7 @@ class Projection extends Model
      * @var array
      */
     protected $fillable = [
-        'film_id', 'theater_id', 'begin'
+        'film_id', 'theater_id', 'begin', 'deleted_at',
     ];
 
     public function film()

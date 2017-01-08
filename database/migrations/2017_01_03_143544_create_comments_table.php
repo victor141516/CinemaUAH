@@ -23,6 +23,7 @@ class CreateCommentsTable extends Migration
             $table->unsignedInteger('film_id');
             $table->foreign('film_id')->references('id')->on('films');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -22,11 +22,6 @@ class Film extends Model
         'producer','director','age_rating','others',
         'has_image', 'deleted_at'];
 
-    public function tickets()
-    {
-        return $this->hasMany('App\Ticket');
-    }
-
     public function actors()
     {
         return $this->belongsToMany('App\Actor');
@@ -65,5 +60,14 @@ class Film extends Model
         $film->restore();
         $film->actors()->sync($actors);
         return $film;
+    }
+
+    public function cascadeDelete()
+    {
+        foreach ($this->projections as $each) {
+            $each->tickets()->delete();
+        }
+        $this->projections()->delete();
+        $this->delete();
     }
 }
