@@ -10,7 +10,6 @@
 
 @section('content')
 
-    {{-- @include('common.film_list') --}}
     <div class="row">
         @foreach($films as $film)
             <div class="col-md-3 col-sm-4 col-xs-12 text-center film">

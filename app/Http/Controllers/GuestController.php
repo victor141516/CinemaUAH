@@ -24,7 +24,10 @@ class GuestController extends Controller
 
     public function showFilmDetailed($id)
     {
-        $film = Film::where('id', $id)->with('comments')->first();
+        $film = Film::where('id', $id)->with([
+            'projections' => function($q) {
+                $q->where('begin', '>', Carbon::today());
+            }])->with('comments')->first();
 
         return view('public.film_detailed')
                 ->withFilm($film);
