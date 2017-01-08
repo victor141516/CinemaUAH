@@ -14,8 +14,6 @@
 Route::get('/', 'GuestController@showFilms');
 Route::get('/film/{id}', 'GuestController@showFilmDetailed');
 Route::get('/seats/{id}', 'GuestController@showSeatBooking');
-Route::get('/theater', 'GuestController@showFilms');
-Route::get('/reservations', 'GuestController@showFilms');
 Route::post('/book', 'GuestController@bookSeat');
 Route::get('/pay', 'GuestController@paySeat');
 

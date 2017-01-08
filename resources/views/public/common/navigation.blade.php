@@ -10,7 +10,7 @@
             <a class="navbar-brand" href="#">Cinema UAH</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
+           {{--  <ul class="nav navbar-nav">
                 <!--Rol User-->
                 <li @if (Request::is('films')) class="active" @endif>
                     <a href="{{ url('/') }}">Películas</a>
@@ -21,7 +21,7 @@
                 <li @if (Request::is('reservations')) class="active" @endif>
                     <a href="{{ url('/reservations') }}">Consultar reservas</a>
                 </li>
-            </ul>
+            </ul> --}}
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
