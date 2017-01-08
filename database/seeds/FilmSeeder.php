@@ -25,7 +25,7 @@ class FilmSeeder extends Seeder
 				'director' => 'Gareth Edwards',
 				'age_rating' => '8',
 				'others' => '',
-				'has_image' => false,
+				'has_image' => true,
 			],
 
 			[
@@ -41,7 +41,7 @@ class FilmSeeder extends Seeder
 				'director' => 'Morten Tyldum',
 				'age_rating' => '16',
 				'others' => '',
-				'has_image' => false,
+				'has_image' => true,
 			],
 
 			[
@@ -57,7 +57,7 @@ class FilmSeeder extends Seeder
 				'director' => 'Fabio Guaglione, Fabio Resinaro',
 				'age_rating' => '18',
 				'others' => '',
-				'has_image' => false,
+				'has_image' => true,
 			],
 
 			[
@@ -73,7 +73,7 @@ class FilmSeeder extends Seeder
 				'director' => 'François Ozon',
 				'age_rating' => '13',
 				'others' => '',
-				'has_image' => false,
+				'has_image' => true,
 			],
 
 			[
@@ -89,7 +89,7 @@ class FilmSeeder extends Seeder
 				'director' => 'Eric Lavaine',
 				'age_rating' => '4',
 				'others' => '',
-				'has_image' => false,
+				'has_image' => true,
 			],
 
 		];
