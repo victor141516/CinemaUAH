@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Projection extends Model
@@ -29,5 +30,22 @@ class Projection extends Model
     public function tickets()
     {
         return $this->hasMany('App\Ticket');
+    }
+
+    public function getBeginHour()
+    {
+        return Carbon::parse($this->begin)->format("G:i");
+    }
+
+    public function getFormatedSeats()
+    {
+        $tickets = $this->tickets;
+
+        $seats = [];
+        foreach ($tickets as $each) {
+            $seats[$each->id] = $each->row . '-' . $each->column;
+        }
+
+        return $seats;
     }
 }

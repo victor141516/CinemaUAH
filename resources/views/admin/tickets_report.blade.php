@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-    Crear pelicula
+    Informe de entradas
 @endsection
 
 @section('navbar')
@@ -9,5 +9,5 @@
 @endsection
 
 @section('content')
-
+	{{ json_encode($tickets) }}
 @endsection

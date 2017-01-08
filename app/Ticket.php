@@ -17,7 +17,9 @@ class Ticket extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'cinema_id', 'projection_id', 'row', 'column', 'is_paid', 'token', 'admin_lock', 'deleted_at',
+        'user_id', 'cinema_id', 'projection_id',
+        'row', 'column', 'is_paid', 'token', 'admin_lock',
+        'created_at', 'updated_at', 'deleted_at',
     ];
 
     public function projection()

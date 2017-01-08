@@ -13,8 +13,11 @@
 
 Route::get('/', 'GuestController@showFilms');
 Route::get('/film/{id}', 'GuestController@showFilmDetailed');
+Route::get('/seats/{id}', 'GuestController@showSeatBooking');
 Route::get('/theater', 'GuestController@showFilms');
 Route::get('/reservations', 'GuestController@showFilms');
+Route::post('/book', 'GuestController@bookSeat');
+Route::get('/pay', 'GuestController@paySeat');
 
 Route::get('auth/login', 'Auth\LoginController@showLoginForm');
 Route::post('auth/login', 'Auth\LoginController@login');
@@ -24,7 +27,6 @@ Route::post('auth/register', 'Auth\RegisterController@postRegister');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::post('comment', 'AjaxController@comment');
-    Route::post('api/book', 'AjaxController@bookSeat');
     Route::post('api/pay/{token}', 'AjaxController@paySeat');
     Route::post('api/change_seat', 'AjaxController@adminChangeSeat');
 

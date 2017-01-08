@@ -51,19 +51,19 @@
                         </li>
                     </ul>
                 </li>
-                <li role="presentation" @if (Request::is('admin/films_report') || Request::is('admin/theater_report') || Request::is('admin/entries_report') || Request::is('admin/reservations_report')) class="active" @endif>
+                <li role="presentation" @if (Request::has('admin/films_report') || Request::is('admin/theater_report') || Request::has('admin/tickets_report'))  class="active" @endif>
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
                         Informes <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li role="presentation" @if (Request::is('admin/films_report/genre')) class="active" @endif>
-                            <a href="{{ url('admin/films_report') }}">Informe de películas</a>
+                        <li role="presentation" @if (Request::has('admin/films_report')) class="active" @endif>
+                            <a href="{{ url('admin/films_report/genre') }}">Informe de películas</a>
                         </li>
                         <li role="presentation" @if (Request::is('admin/theater_report')) class="active" @endif>
                             <a href="{{ url('admin/theater_report') }}">Informe de salas</a>
                         </li>
-                        <li role="presentation" @if (Request::is('admin/tickets_report/projection_id')) class="active" @endif>
-                            <a href="{{ url('admin/tickets_report') }}">Informe de entradas</a>
+                        <li role="presentation" @if (Request::has('admin/tickets_report')) class="active" @endif>
+                            <a href="{{ url('admin/tickets_report/projection_id') }}">Informe de entradas</a>
                         </li>
                     </ul>
                 </li>

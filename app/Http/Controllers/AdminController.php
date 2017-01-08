@@ -105,11 +105,7 @@ class AdminController extends Controller
             return error(403);
         }
         $projection = Projection::with('tickets')->with('theater')->find($projection_id);
-
-        $seats = [];
-        foreach ($projection->tickets as $each) {
-            $seats[$each->id] = $each->row . '-' . $each->column;
-        }
+        $seats = $projection->getFormatedSeats();
 
         return view('admin.manage_tickets_seats')
                 ->withSeats($seats)
@@ -150,10 +146,11 @@ class AdminController extends Controller
 
     public function filmsReport($group = 'genre')
     {
-        $films = Film::with('tickets')
-            ->with('actors')
+        $films = Film::with('actors')
             ->with('comments')
-            ->with('projections')
+            ->with(['projections' => function($query) {
+                $query->with('tickets');
+            }])
             ->get()->groupBy($group);
 
         return view('admin.films_report')
@@ -169,12 +166,13 @@ class AdminController extends Controller
             ->withTheaters($theaters);
     }
 
-    public function ticketReport($group = 'projection_id')
+    public function ticketsReport($group = 'projection_id')
     {
-        $tickets = Ticket::with('projections')
+        $tickets = Ticket::with('projection')
             ->with('user')
             ->get()->groupBy($group);
 
-        return view('admin.entries_report');
+        return view('admin.tickets_report')
+            ->withTickets($tickets);
     }
 }

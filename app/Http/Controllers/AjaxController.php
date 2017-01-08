@@ -14,24 +14,6 @@ use Illuminate\Http\Request;
 
 class AjaxController extends Controller
 {
-	public function bookSeat(Request $request)
-	{
-		$projection = Projection::find($request->projection_id);
-		if (is_null($projection)) {
-			return -1;
-		}
-
-		$ticket = Ticket::updateOrCreate([
-			'projection_id' => $projection->id,
-			'user_id' => Auth::check() ? Auth::id() : null,
-			'row' => $request->row,
-			'column' => $request->column,
-		], ['is_paid' => false,
-			'token' => uniqid("", true),]);
-
-		return $ticket->token;
-	}
-
 	public function paySeat(Request $request, $token = false)
 	{
 		$ticket = Ticket::where('token', $token)->first();
