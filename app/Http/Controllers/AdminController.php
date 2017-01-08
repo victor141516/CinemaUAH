@@ -13,13 +13,13 @@ class AdminController extends Controller
 {
     public function home()
     {
-        return redirect('/admin/add_film');
+        return redirect('/admin/manage_films');
         //return view('admin.home');
     }
 
     public function addFilm()
     {
-        return view('admin.add_film')
+        return view('admin.film.add')
                 ->withFilm(new Film)
                 ->withActors('')
                 ->withGenres(Film::getGenres())
@@ -44,7 +44,7 @@ class AdminController extends Controller
     {
         $film = Film::with('actors')->find($id);
 
-        return view('admin.edit_film')
+        return view('admin.film.edit')
                 ->withFilm($film)
                 ->withActors(implode(', ', ($film->actors->pluck('name')->toArray())))
                 ->withGenres(Film::getGenres())
@@ -55,7 +55,7 @@ class AdminController extends Controller
     {
         $films = Film::get();
 
-        return view('admin.manage_films')
+        return view('admin.film.manage')
                 ->withFilms($films)
                 ->withGenres(Film::getGenres())
                 ->withAgeRatings(Film::getAgeRatings());
@@ -63,13 +63,13 @@ class AdminController extends Controller
 
     public function addTheater()
     {
-        return view('admin.add_theater');
+        return view('admin.theater.add');
     }
 
     public function editTheater($id)
     {
         $theater = Theater::find($id);
-        return view('admin.edit_theater')->withTheater($theater);
+        return view('admin.theater.edit')->withTheater($theater);
     }
 
     public function deleteTheater($id)
@@ -82,7 +82,7 @@ class AdminController extends Controller
     public function manageTheaters()
     {
         $theaters = Theater::get();
-        return view('admin.manage_theaters')->withTheaters($theaters);
+        return view('admin.theater.manage')->withTheaters($theaters);
     }
 
     public function saveTheater(Request $request, $id = false)
@@ -95,7 +95,7 @@ class AdminController extends Controller
     {
         $theaters = Projection::with('theater')->with('film')->get()->groupBy('theater_id');
 
-        return view('admin.manage_tickets_projections')
+        return view('admin.ticket.manage_projections')
                 ->withTheaters($theaters);
     }
 
@@ -107,7 +107,7 @@ class AdminController extends Controller
         $projection = Projection::with('tickets')->with('theater')->find($projection_id);
         $seats = $projection->getFormatedSeats();
 
-        return view('admin.manage_tickets_seats')
+        return view('admin.ticket.manage_seats')
                 ->withSeats($seats)
                 ->withProjection($projection);
     }
@@ -118,7 +118,7 @@ class AdminController extends Controller
         $theaters = Theater::all();
         $films = Film::all();
 
-        return view('admin.manage_projections')
+        return view('admin.projection.manage')
             ->withFilmId($film_id)
             ->withProjections($projections)
             ->withFilms($films)
@@ -153,7 +153,7 @@ class AdminController extends Controller
             }])
             ->get()->groupBy($group);
 
-        return view('admin.films_report')
+        return view('admin.film.report')
             ->withGroup($group)
             ->withFilms($films);
     }
@@ -162,7 +162,7 @@ class AdminController extends Controller
     {
         $theaters = Theater::with('projections')->get();
 
-        return view('admin.theater_report')
+        return view('admin.theater.report')
             ->withTheaters($theaters);
     }
 
@@ -172,7 +172,7 @@ class AdminController extends Controller
             ->with('user')
             ->get()->groupBy($group);
 
-        return view('admin.tickets_report')
+        return view('admin.ticket.report')
             ->withTickets($tickets);
     }
 }
