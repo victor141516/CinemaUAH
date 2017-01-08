@@ -53,7 +53,7 @@ class AdminController extends Controller
 
     public function manageFilms()
     {
-        $films = Film::paginate(10);
+        $films = Film::get();
 
         return view('admin.manage_films')
                 ->withFilms($films)
@@ -81,7 +81,7 @@ class AdminController extends Controller
 
     public function manageTheaters()
     {
-        $theaters = Theater::paginate(10);
+        $theaters = Theater::get();
         return view('admin.manage_theaters')->withTheaters($theaters);
     }
 
