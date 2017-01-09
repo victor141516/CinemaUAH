@@ -69,7 +69,10 @@ class GuestController extends Controller
 
         $ticket = [];
         foreach ($seat_array as $each) {
-            if (Ticket::where($each)->exists()){
+            $each_compare = $each;
+            unset($each_compare["user_id"]);
+            unset($each_compare["token"]);
+            if (!(Ticket::where($each_compare)->exists())){
                 $ticket[] = Ticket::create($each);                
             }
         }
