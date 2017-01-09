@@ -69,7 +69,9 @@ class GuestController extends Controller
 
         $ticket = [];
         foreach ($seat_array as $each) {
-            $ticket[] = Ticket::create($each);
+            if (Ticket::where($each)->exists()){
+                $ticket[] = Ticket::create($each);                
+            }
         }
 
         $request->session()->flash('ticket_token', $token);
