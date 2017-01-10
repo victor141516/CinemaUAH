@@ -7,6 +7,7 @@ use App\Projection;
 use App\Ticket;
 use Auth;
 use Carbon\Carbon;
+use DNS2D;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -101,11 +102,18 @@ class GuestController extends Controller
 
     public function printTicket(Request $request, $projection_id)
     {
+        $token = uniqid("", true);
         $tickets = $request->user()->tickets()->with(['projection' => function($query) {
             $query->with('film');
-        }])->where('projection_id', $projection_id)->get();
+            $query->with('theater');
+        }])->where('projection_id', $projection_id);
+        $tickets->update(['token' => $token]);
+        $qr_html = '<img src="data:image/png;base64,' . DNS2D::getBarcodePNG($token, "QRCODE") . '" alt="barcode"/>';
 
-        $pdf = PDF::loadView('public.pdf', ['tickets' => $tickets]);
+        $pdf = PDF::loadView('public.pdf', [
+            'tickets' => $tickets,
+            'qr' => $qr_html,
+        ]);
         return $pdf->download('Entradas.pdf');
     }
 }
