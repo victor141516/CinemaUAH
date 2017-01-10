@@ -9,6 +9,7 @@
 @endsection
 
 @section('content')
+<<<<<<< HEAD
 
     @foreach($order as $films)
         <div class="row">
@@ -38,4 +39,11 @@
         </div>
     @endforeach
 
+=======
+    <select name="order_by" id="order_by">
+        @foreach ($ordenations as $each)
+            <option value="{{ $each }}">{{ $each }}</option>
+        @endforeach
+    </select>
+>>>>>>> 2179ce070fcadf4adb6fc601f5bcbd38ab47d472
 @endsection
