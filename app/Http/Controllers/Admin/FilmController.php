@@ -9,6 +9,7 @@ use App\Projection;
 use App\Ticket;
 use App\Theater;
 use Carbon\Carbon;
+use Schema;
 
 class FilmController extends Controller
 {
@@ -65,6 +66,7 @@ class FilmController extends Controller
 
         return view('admin.film.report')
             ->withGroup($group)
+            ->withOrdernations(Schema::getColumnListing('tickets');)
             ->withFilms($films);
     }
 }

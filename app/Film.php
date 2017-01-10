@@ -70,4 +70,14 @@ class Film extends Model
         $this->projections()->delete();
         $this->delete();
     }
+
+    public function ticketsCount()
+    {
+        $projections = $this->projections()->with('tickets')->get();
+        $count = 0;
+        foreach ($projections as $each) {
+            $count += $each->tickets->count();
+        }
+        return $count;
+    }
 }

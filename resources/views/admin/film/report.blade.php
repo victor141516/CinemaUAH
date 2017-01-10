@@ -9,5 +9,9 @@
 @endsection
 
 @section('content')
-	{{ json_encode($films) }}
+    <select name="order_by" id="order_by">
+        @foreach ($ordenations as $each)
+            <option value="{{ $each }}">{{ $each }}</option>
+        @endforeach
+    </select>
 @endsection
