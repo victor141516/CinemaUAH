@@ -108,11 +108,10 @@ class GuestController extends Controller
             $query->with('theater');
         }])->where('projection_id', $projection_id);
         $tickets->update(['token' => $token]);
-        $qr_html = '<img src="data:image/png;base64,' . DNS2D::getBarcodePNG($token, "QRCODE") . '" alt="barcode"/>';
 
         $pdf = PDF::loadView('public.pdf', [
-            'tickets' => $tickets,
-            'qr' => $qr_html,
+            'tickets' => $tickets->get(),
+            'qr' => DNS2D::getBarcodePNG($token, "QRCODE"),
         ]);
         return $pdf->download('Entradas.pdf');
     }
