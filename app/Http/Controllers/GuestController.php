@@ -17,8 +17,8 @@ class GuestController extends Controller
     {
         $films = Film::with([
             'projections' => function($q) {
-                $q->where('begin', '>', Carbon::today());
-                $q->where('begin', '<', Carbon::now());
+                $q->where('begin', '>', Carbon::now());
+                $q->orderBy('begin');
             }])->get();
 
         return view('public.films')
@@ -29,7 +29,8 @@ class GuestController extends Controller
     {
         $film = Film::where('id', $id)->with([
             'projections' => function($q) {
-                $q->where('begin', '>', Carbon::today());
+                $q->where('begin', '>', Carbon::now());
+                $q->orderBy('begin');
             }])->with('comments')->first();
 
         return view('public.film_detailed')
