@@ -89,9 +89,8 @@ class GuestController extends Controller
     {
         //Pay logic
 
-        $ticket = Ticket::whereToken($request->session()->get('ticket_token'));
-        $ticket->update(['is_paid' => true]);
-        $projection_id = $ticket->first()->projection_id;
+        $ticket = Ticket::whereToken($request->session()->get('ticket_token'))->update(['is_paid' => true]);
+        $projection_id = Ticket::whereToken($request->session()->get('ticket_token'))->first()->projection_id;
         return redirect('/tickets/' . $projection_id);
     }
 
