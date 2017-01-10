@@ -18,6 +18,7 @@ class GuestController extends Controller
         $films = Film::with([
             'projections' => function($q) {
                 $q->where('begin', '>', Carbon::today());
+                $q->where('begin', '<', Carbon::now());
             }])->get();
 
         return view('public.films')
@@ -88,8 +89,8 @@ class GuestController extends Controller
         //Pay logic
 
         $ticket = Ticket::whereToken($request->session()->get('ticket_token'));
-        $projection_id = $ticket->projection_id;
         $ticket->update(['is_paid' => true]);
+        $projection_id = $ticket->first()->projection_id;
         return redirect('/tickets/' . $projection_id);
     }
 
