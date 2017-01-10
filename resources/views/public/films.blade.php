@@ -21,7 +21,6 @@
                     <img src=@if($film->has_image) "/img/films/{{ $film->id }}.jpg" @else "/img/default.jpg" @endif alt="">
                     <h4>{{ $film->name }}</h4>
                 </a>
-                @include('public.common.film_projections')
             </div>
         @endforeach
     </div>
