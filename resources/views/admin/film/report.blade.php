@@ -9,5 +9,33 @@
 @endsection
 
 @section('content')
-	{{ json_encode($films) }}
+
+    @foreach($order as $films)
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <h4>Ordenado por {{ end($request->all()) }}</h4>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <td>Entradas vendidas</td>
+                            <td>Ingresos generados</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @foreach($films as $film)
+                                <td>{{ $film->id }}</td>
+                                <td>{{ $film->name }}</td>
+                                <td>{{ $film->ticketsCount() }}</td>
+                                <td>{{ $film->ticketsCount() * 5 }}€</td>
+                            @endforeach
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    @endforeach
+
 @endsection
