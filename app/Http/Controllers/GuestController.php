@@ -91,6 +91,7 @@ class GuestController extends Controller
 
         $ticket = Ticket::whereToken($request->session()->get('ticket_token'))->update(['is_paid' => true]);
         $projection_id = Ticket::whereToken($request->session()->get('ticket_token'))->first()->projection_id;
+        $request->session()->flash('tickets', Ticket::whereToken($request->session()->get('ticket_token'))->get());
         return redirect('/tickets/' . $projection_id);
     }
 
@@ -107,11 +108,17 @@ class GuestController extends Controller
     public function printTicket(Request $request, $projection_id)
     {
         $token = uniqid("", true);
-        $tickets = $request->user()->tickets()->with(['projection' => function($query) {
+        if (!Auth::check()) {
+            $ticket_ids = $request->session()->pull('tickets');
+            $tickets = Ticket::whereIn('id', $ticket_ids);
+        } else {
+            $tickets = $request->user()->tickets();
+        }
+        $tickets->update(['token' => $token]);
+        $tickets = $tickets->with(['projection' => function($query) {
             $query->with('film');
             $query->with('theater');
         }])->where('projection_id', $projection_id);
-        $tickets->update(['token' => $token]);
 
         $pdf = PDF::loadView('public.pdf', [
             'tickets' => $tickets->get(),
