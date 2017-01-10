@@ -64,8 +64,8 @@
                         <li role="presentation" @if (Request::is('admin/theater_report')) class="active" @endif>
                             <a href="{{ url('admin/theater_report') }}">Informe de salas</a>
                         </li>
-                        <li role="presentation" @if (Request::is('admin/tickets_report/*')) class="active" @endif>
-                            <a href="{{ url('admin/tickets_report/projection_id') }}">Informe de entradas</a>
+                        <li role="presentation" @if (Request::has('admin/tickets_report')) class="active" @endif>
+                            <a href="{{ url('admin/tickets_report') }}">Informe de entradas</a>
                         </li>
                     </ul>
                 </li>

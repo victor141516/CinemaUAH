@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Film;
 use App\Projection;
 use App\Ticket;
 use App\Theater;
 use Carbon\Carbon;
+use DB;
+use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
@@ -33,11 +34,9 @@ class TicketController extends Controller
                 ->withProjection($projection);
     }
 
-    public function report($group = 'projection_id')
+    public function report()
     {
-        $tickets = Ticket::with('projection')
-            ->with('user')
-            ->get()->groupBy($group);
+        $tickets = Ticket::groupBy(DB::raw('DATE(created_at)'))->select(DB::raw('count(*) as n_tickets, DATE(created_at) as date'))->get();
 
         return view('admin.ticket.report')
             ->withTickets($tickets);

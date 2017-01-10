@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class TicketSeeder extends Seeder
@@ -11,6 +12,7 @@ class TicketSeeder extends Seeder
 	 */
 	public function run()
 	{
+		$time = Carbon::now();
 		$tickets = [
 			['projection_id' => 1,
 			'user_id' => 2,
@@ -19,6 +21,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 2,
 			'user_id' => 2,
@@ -27,6 +31,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 3,
 			'user_id' => 2,
@@ -35,6 +41,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 4,
 			'user_id' => 3,
@@ -43,6 +51,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 5,
 			'user_id' => 3,
@@ -51,6 +61,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 6,
 			'user_id' => 3,
@@ -59,6 +71,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 7,
 			'user_id' => 4,
@@ -67,6 +81,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 8,
 			'user_id' => 4,
@@ -75,6 +91,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 9,
 			'user_id' => 4,
@@ -83,6 +101,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 10,
 			'user_id' => NULL,
@@ -91,6 +111,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 11,
 			'user_id' => NULL,
@@ -99,6 +121,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 12,
 			'user_id' => NULL,
@@ -107,6 +131,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 13,
 			'user_id' => NULL,
@@ -115,6 +141,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 14,
 			'user_id' => NULL,
@@ -123,6 +151,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 15,
 			'user_id' => NULL,
@@ -131,6 +161,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 16,
 			'user_id' => NULL,
@@ -139,6 +171,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 17,
 			'user_id' => NULL,
@@ -147,6 +181,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 18,
 			'user_id' => NULL,
@@ -155,6 +191,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 19,
 			'user_id' => NULL,
@@ -163,6 +201,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 20,
 			'user_id' => NULL,
@@ -171,6 +211,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 21,
 			'user_id' => NULL,
@@ -179,6 +221,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 22,
 			'user_id' => NULL,
@@ -187,6 +231,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 23,
 			'user_id' => NULL,
@@ -195,6 +241,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 24,
 			'user_id' => NULL,
@@ -203,6 +251,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 25,
 			'user_id' => NULL,
@@ -211,6 +261,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 
 
@@ -221,6 +273,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 2,
 			'user_id' => NULL,
@@ -229,6 +283,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 3,
 			'user_id' => NULL,
@@ -237,6 +293,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 4,
 			'user_id' => NULL,
@@ -245,6 +303,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 5,
 			'user_id' => NULL,
@@ -253,6 +313,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 6,
 			'user_id' => NULL,
@@ -261,6 +323,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 7,
 			'user_id' => NULL,
@@ -269,6 +333,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 8,
 			'user_id' => NULL,
@@ -277,6 +343,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 9,
 			'user_id' => NULL,
@@ -285,6 +353,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 10,
 			'user_id' => NULL,
@@ -293,6 +363,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 11,
 			'user_id' => NULL,
@@ -301,6 +373,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 12,
 			'user_id' => NULL,
@@ -309,6 +383,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 13,
 			'user_id' => NULL,
@@ -317,6 +393,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 14,
 			'user_id' => NULL,
@@ -325,6 +403,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 15,
 			'user_id' => NULL,
@@ -333,6 +413,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 16,
 			'user_id' => NULL,
@@ -341,6 +423,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 17,
 			'user_id' => NULL,
@@ -349,6 +433,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 18,
 			'user_id' => NULL,
@@ -357,6 +443,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 19,
 			'user_id' => NULL,
@@ -365,6 +453,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 20,
 			'user_id' => NULL,
@@ -373,6 +463,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 21,
 			'user_id' => NULL,
@@ -381,6 +473,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 22,
 			'user_id' => NULL,
@@ -389,6 +483,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 23,
 			'user_id' => NULL,
@@ -397,6 +493,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 24,
 			'user_id' => NULL,
@@ -405,6 +503,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 25,
 			'user_id' => NULL,
@@ -413,6 +513,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 
 
@@ -423,6 +525,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 2,
 			'user_id' => NULL,
@@ -431,6 +535,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 3,
 			'user_id' => NULL,
@@ -439,6 +545,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 4,
 			'user_id' => NULL,
@@ -447,6 +555,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 5,
 			'user_id' => NULL,
@@ -455,6 +565,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 6,
 			'user_id' => NULL,
@@ -463,6 +575,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 7,
 			'user_id' => NULL,
@@ -471,6 +585,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 8,
 			'user_id' => NULL,
@@ -479,6 +595,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 9,
 			'user_id' => NULL,
@@ -487,6 +605,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 10,
 			'user_id' => NULL,
@@ -495,6 +615,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 11,
 			'user_id' => NULL,
@@ -503,6 +625,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 12,
 			'user_id' => NULL,
@@ -511,6 +635,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 13,
 			'user_id' => NULL,
@@ -519,6 +645,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 14,
 			'user_id' => NULL,
@@ -527,6 +655,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 15,
 			'user_id' => NULL,
@@ -535,6 +665,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 16,
 			'user_id' => NULL,
@@ -543,6 +675,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 17,
 			'user_id' => NULL,
@@ -551,6 +685,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 18,
 			'user_id' => NULL,
@@ -559,6 +695,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 19,
 			'user_id' => NULL,
@@ -567,6 +705,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 20,
 			'user_id' => NULL,
@@ -575,6 +715,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 21,
 			'user_id' => NULL,
@@ -583,6 +725,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 22,
 			'user_id' => NULL,
@@ -591,6 +735,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 23,
 			'user_id' => NULL,
@@ -599,6 +745,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 24,
 			'user_id' => NULL,
@@ -607,6 +755,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 25,
 			'user_id' => NULL,
@@ -615,6 +765,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 
 
@@ -625,6 +777,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 2,
 			'user_id' => NULL,
@@ -633,6 +787,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 3,
 			'user_id' => NULL,
@@ -641,6 +797,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 4,
 			'user_id' => NULL,
@@ -649,6 +807,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 5,
 			'user_id' => NULL,
@@ -657,6 +817,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 6,
 			'user_id' => NULL,
@@ -665,6 +827,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 7,
 			'user_id' => NULL,
@@ -673,6 +837,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 8,
 			'user_id' => NULL,
@@ -681,6 +847,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 9,
 			'user_id' => NULL,
@@ -689,6 +857,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 10,
 			'user_id' => NULL,
@@ -697,6 +867,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 11,
 			'user_id' => NULL,
@@ -705,6 +877,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 12,
 			'user_id' => NULL,
@@ -713,6 +887,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 13,
 			'user_id' => NULL,
@@ -721,6 +897,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 14,
 			'user_id' => NULL,
@@ -729,6 +907,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 15,
 			'user_id' => NULL,
@@ -737,6 +917,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 16,
 			'user_id' => NULL,
@@ -745,6 +927,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 17,
 			'user_id' => NULL,
@@ -753,6 +937,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 18,
 			'user_id' => NULL,
@@ -761,6 +947,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 19,
 			'user_id' => NULL,
@@ -769,6 +957,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 20,
 			'user_id' => NULL,
@@ -777,6 +967,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 21,
 			'user_id' => NULL,
@@ -785,6 +977,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 22,
 			'user_id' => NULL,
@@ -793,6 +987,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 23,
 			'user_id' => NULL,
@@ -801,6 +997,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 24,
 			'user_id' => NULL,
@@ -809,6 +1007,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 25,
 			'user_id' => NULL,
@@ -817,6 +1017,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 
 
@@ -827,6 +1029,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 2,
 			'user_id' => NULL,
@@ -835,6 +1039,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 3,
 			'user_id' => NULL,
@@ -843,6 +1049,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 4,
 			'user_id' => NULL,
@@ -851,6 +1059,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 5,
 			'user_id' => NULL,
@@ -859,6 +1069,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 6,
 			'user_id' => NULL,
@@ -867,6 +1079,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 7,
 			'user_id' => NULL,
@@ -875,6 +1089,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 8,
 			'user_id' => NULL,
@@ -883,6 +1099,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 9,
 			'user_id' => NULL,
@@ -891,6 +1109,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 10,
 			'user_id' => NULL,
@@ -899,6 +1119,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 11,
 			'user_id' => NULL,
@@ -907,6 +1129,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 12,
 			'user_id' => NULL,
@@ -915,6 +1139,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 13,
 			'user_id' => NULL,
@@ -923,6 +1149,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 14,
 			'user_id' => NULL,
@@ -931,6 +1159,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 15,
 			'user_id' => NULL,
@@ -939,6 +1169,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 16,
 			'user_id' => NULL,
@@ -947,6 +1179,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 17,
 			'user_id' => NULL,
@@ -955,6 +1189,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 18,
 			'user_id' => NULL,
@@ -963,6 +1199,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 19,
 			'user_id' => NULL,
@@ -971,6 +1209,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 20,
 			'user_id' => NULL,
@@ -979,6 +1219,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 21,
 			'user_id' => NULL,
@@ -987,6 +1229,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 22,
 			'user_id' => NULL,
@@ -995,6 +1239,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 23,
 			'user_id' => NULL,
@@ -1003,6 +1249,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 24,
 			'user_id' => NULL,
@@ -1011,6 +1259,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 25,
 			'user_id' => NULL,
@@ -1019,6 +1269,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 
 
@@ -1029,6 +1281,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 2,
 			'user_id' => NULL,
@@ -1037,6 +1291,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 3,
 			'user_id' => NULL,
@@ -1045,6 +1301,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 4,
 			'user_id' => NULL,
@@ -1053,6 +1311,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 5,
 			'user_id' => NULL,
@@ -1061,6 +1321,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 6,
 			'user_id' => NULL,
@@ -1069,6 +1331,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 7,
 			'user_id' => NULL,
@@ -1077,6 +1341,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 8,
 			'user_id' => NULL,
@@ -1085,6 +1351,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 9,
 			'user_id' => NULL,
@@ -1093,6 +1361,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 10,
 			'user_id' => NULL,
@@ -1101,6 +1371,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 11,
 			'user_id' => NULL,
@@ -1109,6 +1381,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 12,
 			'user_id' => NULL,
@@ -1117,6 +1391,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 13,
 			'user_id' => NULL,
@@ -1125,6 +1401,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 14,
 			'user_id' => NULL,
@@ -1133,6 +1411,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 15,
 			'user_id' => NULL,
@@ -1141,6 +1421,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 16,
 			'user_id' => NULL,
@@ -1149,6 +1431,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 17,
 			'user_id' => NULL,
@@ -1157,6 +1441,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 18,
 			'user_id' => NULL,
@@ -1165,6 +1451,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 19,
 			'user_id' => NULL,
@@ -1173,6 +1461,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 20,
 			'user_id' => NULL,
@@ -1181,6 +1471,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 21,
 			'user_id' => NULL,
@@ -1189,6 +1481,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 22,
 			'user_id' => NULL,
@@ -1197,6 +1491,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 23,
 			'user_id' => NULL,
@@ -1205,6 +1501,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 24,
 			'user_id' => NULL,
@@ -1213,6 +1511,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 25,
 			'user_id' => NULL,
@@ -1221,6 +1521,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 
 
@@ -1231,6 +1533,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 2,
 			'user_id' => NULL,
@@ -1239,6 +1543,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 3,
 			'user_id' => NULL,
@@ -1247,6 +1553,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 4,
 			'user_id' => NULL,
@@ -1255,6 +1563,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 5,
 			'user_id' => NULL,
@@ -1263,6 +1573,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 6,
 			'user_id' => NULL,
@@ -1271,6 +1583,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 7,
 			'user_id' => NULL,
@@ -1279,6 +1593,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 8,
 			'user_id' => NULL,
@@ -1287,6 +1603,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 9,
 			'user_id' => NULL,
@@ -1295,6 +1613,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 10,
 			'user_id' => NULL,
@@ -1303,6 +1623,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 11,
 			'user_id' => NULL,
@@ -1311,6 +1633,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 12,
 			'user_id' => NULL,
@@ -1319,6 +1643,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 13,
 			'user_id' => NULL,
@@ -1327,6 +1653,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 14,
 			'user_id' => NULL,
@@ -1335,6 +1663,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 15,
 			'user_id' => NULL,
@@ -1343,6 +1673,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 16,
 			'user_id' => NULL,
@@ -1351,6 +1683,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 17,
 			'user_id' => NULL,
@@ -1359,6 +1693,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 18,
 			'user_id' => NULL,
@@ -1367,6 +1703,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 19,
 			'user_id' => NULL,
@@ -1375,6 +1713,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 20,
 			'user_id' => NULL,
@@ -1383,6 +1723,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 21,
 			'user_id' => NULL,
@@ -1391,6 +1733,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 22,
 			'user_id' => NULL,
@@ -1399,6 +1743,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 23,
 			'user_id' => NULL,
@@ -1407,6 +1753,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 24,
 			'user_id' => NULL,
@@ -1415,6 +1763,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 25,
 			'user_id' => NULL,
@@ -1423,6 +1773,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 
 
@@ -1433,6 +1785,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 2,
 			'user_id' => NULL,
@@ -1441,6 +1795,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 3,
 			'user_id' => NULL,
@@ -1449,6 +1805,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 4,
 			'user_id' => NULL,
@@ -1457,6 +1815,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 5,
 			'user_id' => NULL,
@@ -1465,6 +1825,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 6,
 			'user_id' => NULL,
@@ -1473,6 +1835,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 7,
 			'user_id' => NULL,
@@ -1481,6 +1845,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 8,
 			'user_id' => NULL,
@@ -1489,6 +1855,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 9,
 			'user_id' => NULL,
@@ -1497,6 +1865,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 10,
 			'user_id' => NULL,
@@ -1505,6 +1875,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 11,
 			'user_id' => NULL,
@@ -1513,6 +1885,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 12,
 			'user_id' => NULL,
@@ -1521,6 +1895,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 13,
 			'user_id' => NULL,
@@ -1529,6 +1905,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 14,
 			'user_id' => NULL,
@@ -1537,6 +1915,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 15,
 			'user_id' => NULL,
@@ -1545,6 +1925,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 16,
 			'user_id' => NULL,
@@ -1553,6 +1935,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 17,
 			'user_id' => NULL,
@@ -1561,6 +1945,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 18,
 			'user_id' => NULL,
@@ -1569,6 +1955,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 19,
 			'user_id' => NULL,
@@ -1577,6 +1965,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 20,
 			'user_id' => NULL,
@@ -1585,6 +1975,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 21,
 			'user_id' => NULL,
@@ -1593,6 +1985,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 22,
 			'user_id' => NULL,
@@ -1601,6 +1995,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 23,
 			'user_id' => NULL,
@@ -1609,6 +2005,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 24,
 			'user_id' => NULL,
@@ -1617,6 +2015,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 25,
 			'user_id' => NULL,
@@ -1625,6 +2025,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 
 
@@ -1635,6 +2037,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 2,
 			'user_id' => NULL,
@@ -1643,6 +2047,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 3,
 			'user_id' => NULL,
@@ -1651,6 +2057,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 4,
 			'user_id' => NULL,
@@ -1659,6 +2067,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 5,
 			'user_id' => NULL,
@@ -1667,6 +2077,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 6,
 			'user_id' => NULL,
@@ -1675,6 +2087,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 7,
 			'user_id' => NULL,
@@ -1683,6 +2097,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 8,
 			'user_id' => NULL,
@@ -1691,6 +2107,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 9,
 			'user_id' => NULL,
@@ -1699,6 +2117,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 10,
 			'user_id' => NULL,
@@ -1707,6 +2127,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 11,
 			'user_id' => NULL,
@@ -1715,6 +2137,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 12,
 			'user_id' => NULL,
@@ -1723,6 +2147,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 13,
 			'user_id' => NULL,
@@ -1731,6 +2157,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 14,
 			'user_id' => NULL,
@@ -1739,6 +2167,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 15,
 			'user_id' => NULL,
@@ -1747,6 +2177,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 16,
 			'user_id' => NULL,
@@ -1755,6 +2187,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 17,
 			'user_id' => NULL,
@@ -1763,6 +2197,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 18,
 			'user_id' => NULL,
@@ -1771,6 +2207,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 19,
 			'user_id' => NULL,
@@ -1779,6 +2217,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 20,
 			'user_id' => NULL,
@@ -1787,6 +2227,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 21,
 			'user_id' => NULL,
@@ -1795,6 +2237,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 22,
 			'user_id' => NULL,
@@ -1803,6 +2247,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 23,
 			'user_id' => NULL,
@@ -1811,6 +2257,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 24,
 			'user_id' => NULL,
@@ -1819,6 +2267,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 25,
 			'user_id' => NULL,
@@ -1827,6 +2277,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 
 
@@ -1837,6 +2289,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 2,
 			'user_id' => NULL,
@@ -1845,6 +2299,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 3,
 			'user_id' => NULL,
@@ -1853,6 +2309,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 4,
 			'user_id' => NULL,
@@ -1861,6 +2319,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 5,
 			'user_id' => NULL,
@@ -1869,6 +2329,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 6,
 			'user_id' => NULL,
@@ -1877,6 +2339,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 7,
 			'user_id' => NULL,
@@ -1885,6 +2349,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 8,
 			'user_id' => NULL,
@@ -1893,6 +2359,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 9,
 			'user_id' => NULL,
@@ -1901,6 +2369,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 10,
 			'user_id' => NULL,
@@ -1909,6 +2379,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 11,
 			'user_id' => NULL,
@@ -1917,6 +2389,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 12,
 			'user_id' => NULL,
@@ -1925,6 +2399,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 13,
 			'user_id' => NULL,
@@ -1933,6 +2409,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 14,
 			'user_id' => NULL,
@@ -1941,6 +2419,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 15,
 			'user_id' => NULL,
@@ -1949,6 +2429,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 16,
 			'user_id' => NULL,
@@ -1957,6 +2439,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 17,
 			'user_id' => NULL,
@@ -1965,6 +2449,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 18,
 			'user_id' => NULL,
@@ -1973,6 +2459,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 19,
 			'user_id' => NULL,
@@ -1981,6 +2469,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 20,
 			'user_id' => NULL,
@@ -1989,6 +2479,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 21,
 			'user_id' => NULL,
@@ -1997,6 +2489,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 22,
 			'user_id' => NULL,
@@ -2005,6 +2499,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 23,
 			'user_id' => NULL,
@@ -2013,6 +2509,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 24,
 			'user_id' => NULL,
@@ -2021,6 +2519,8 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 			['projection_id' => 25,
 			'user_id' => NULL,
@@ -2029,12 +2529,14 @@ class TicketSeeder extends Seeder
 			'is_paid' => true,
 			'token' => NULL,
 			'admin_lock' => false,
+			'created_at' => $time,
+			'updated_at' => $time
 			],
 
 		];
 
 		foreach ($tickets as $each) {
-			DB::table('tickets')->insert($each);        	
+			DB::table('tickets')->insert($each);
 		}
 	}
 }
