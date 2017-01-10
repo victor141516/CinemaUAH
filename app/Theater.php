@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
+use App\Projection;
 
 class Theater extends Model
 {
@@ -30,6 +32,9 @@ class Theater extends Model
         foreach ($this->projections as $each) {
             $time += $each->film->minutes_duration;
         }
+
+        $first_projection = Projection::orderBy('begin', 'ASC')->first();
+
         return $time/(Carbon::now()->diffInMinutes($first_projection->begin));
     }
 }
