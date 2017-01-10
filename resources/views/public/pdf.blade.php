@@ -8,17 +8,22 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-9">
-            {{ config('app.name', 'Laravel') }}
+            <h1>{{ config('app.name', 'Laravel') }}</h1>
         </div>
         <div class="col-xs-3">
             <img src="data:image/png;base64,{{ $qr }}" alt="barcode"/>
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-3">
+    <div class="row" style="padding-top: 15px">
+        <div class="col-xs-12">
+            {{ $tickets[0]->projection->film->name }}
+        </div>
+    </div>
+    <div class="row" style="padding-top: 15px">
+        <div class="col-xs-3 col-xs-offset-1">
             <strong>{{ $tickets[0]->projection->theater->name }}</strong>
         </div>
-        <div class="col-xs-3 col-xs-offset-6">
+        <div class="col-xs-5 col-xs-offset-3">
             <strong>Fecha: </strong> {{ $tickets[0]->projection->begin }}
         </div>
     </div>
@@ -36,8 +41,8 @@
                     @foreach($tickets as $ticket)
                         <tr>
                             <td>{{ $ticket->id }}</td>
-                            <td><strong>Fila:</strong> {{ $ticket->row }}; <strong>Columna:</strong> {{ $ticket->columna }}</td>
-                            <td>5€</td>
+                            <td><strong>Fila:</strong> {{ $ticket->row }}  <strong>Columna:</strong> {{ $ticket->column }}</td>
+                            <td>5&euro;</td>
                         </tr>
                     @endforeach
                 </tbody>
