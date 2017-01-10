@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
 use App\Film;
 use App\Projection;
 use App\Ticket;
+use Auth;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use PDF;
 
 class GuestController extends Controller
 {
@@ -100,7 +101,11 @@ class GuestController extends Controller
 
     public function printTicket(Request $request, $projection_id)
     {
-        $tickets = $request->user()->tickets()->where('projection_id', $projection_id)->get();
-        dd($tickets);
+        $tickets = $request->user()->tickets()->with(['projection' => function($query) {
+            $query->with('film');
+        }])->where('projection_id', $projection_id)->get();
+
+        $pdf = PDF::loadView('public.pdf', ['tickets' => $tickets]);
+        return $pdf->download('Entradas.pdf');
     }
 }
