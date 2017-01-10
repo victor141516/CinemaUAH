@@ -66,7 +66,7 @@ class FilmController extends Controller
 
         return view('admin.film.report')
             ->withGroup($group)
-            ->withOrdenations(Schema::getColumnListing('tickets');)
+            ->withOrdenations(Schema::getColumnListing('tickets'))
             ->withFilms($films);
     }
 }
