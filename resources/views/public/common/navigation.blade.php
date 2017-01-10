@@ -7,21 +7,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Cinema UAH</a>
+            <a class="navbar-brand" href="/">Cinema UAH</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-           {{--  <ul class="nav navbar-nav">
-                <!--Rol User-->
-                <li @if (Request::is('films')) class="active" @endif>
-                    <a href="{{ url('/') }}">Películas</a>
-                </li>
-                <li @if (Request::is('theater')) class="active" @endif>
-                    <a href="{{ url('/theater') }}">Salas</a>
-                </li>
-                <li @if (Request::is('reservations')) class="active" @endif>
-                    <a href="{{ url('/reservations') }}">Consultar reservas</a>
-                </li>
-            </ul> --}}
+            @if(Auth::check())
+                <ul class="nav navbar-nav">
+                    <!--Rol User-->
+                    <li @if (Request::is('films')) class="active" @endif>
+                        <a href="{{ url('/') }}">Películas</a>
+                    </li>
+                    {{-- <li @if (Request::is('theater')) class="active" @endif>
+                        <a href="{{ url('/theater') }}">Salas</a>
+                    </li> --}}
+                    <li @if (Request::is('tickets')) class="active" @endif>
+                        <a href="{{ url('/tickets') }}">Mis entradas</a>
+                    </li>
+                </ul>
+            @endif
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->

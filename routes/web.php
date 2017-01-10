@@ -3,6 +3,8 @@
 Route::get('/', 'GuestController@showFilms');
 Route::get('/film/{id}', 'GuestController@showFilmDetailed');
 Route::get('/seats/{id}', 'GuestController@showSeatBooking');
+Route::get('/tickets', 'GuestController@showTickets');
+Route::get('/tickets/{id}', 'GuestController@printTicket');
 Route::post('/book', 'GuestController@bookSeat');
 Route::get('/pay', 'GuestController@paySeat');
 

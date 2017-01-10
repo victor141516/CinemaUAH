@@ -87,4 +87,20 @@ class GuestController extends Controller
         Ticket::whereToken($request->session()->get('ticket_token'))->update(['is_paid' => true]);
         return redirect('/');
     }
+
+    public function showTickets(Request $request)
+    {
+        $tickets = $request->user()->tickets()->with(['projection' => function($query) {
+            $query->with('film');
+        }])->groupBy('projection_id');
+
+        return view('public.tickets')
+            ->withTickets($tickets);
+    }
+
+    public function printTicket(Request $request, $projection_id)
+    {
+        $tickets = $request->user()->tickets()->where('projection_id', $projection_id)->get();
+        dd($tickets);
+    }
 }
