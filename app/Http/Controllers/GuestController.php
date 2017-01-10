@@ -116,6 +116,7 @@ class GuestController extends Controller
             'tickets' => $tickets->get(),
             'qr' => DNS2D::getBarcodePNG($token, "QRCODE"),
         ]);
+
         return $pdf->download('Entradas.pdf');
     }
 }

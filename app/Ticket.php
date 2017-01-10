@@ -10,7 +10,6 @@ class Ticket extends Model
 {
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    
     /**
      * The attributes that are mass assignable.
      *
