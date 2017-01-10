@@ -73,7 +73,7 @@ class GuestController extends Controller
             unset($each_compare["user_id"]);
             unset($each_compare["token"]);
             if (!(Ticket::where($each_compare)->exists())){
-                $ticket[] = Ticket::create($each);                
+                $ticket[] = Ticket::create($each);
             }
         }
 
@@ -92,7 +92,7 @@ class GuestController extends Controller
     {
         $tickets = $request->user()->tickets()->with(['projection' => function($query) {
             $query->with('film');
-        }])->groupBy('projection_id');
+        }])->get()->groupBy('projection_id');
 
         return view('public.tickets')
             ->withTickets($tickets);

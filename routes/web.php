@@ -33,7 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('delete_film/{id}', 'Admin\FilmController@delete');
         Route::post('film_image', 'AjaxController@editFilmImage');
         Route::get('films_report/{group}', 'Admin\FilmController@report');
-        
+
         //Theater
         Route::get('add_theater', 'Admin\TheaterController@add');
         Route::post('add_theater', 'Admin\TheaterController@save');
@@ -43,7 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('delete_theater/{id}', 'Admin\TheaterController@delete');
         Route::get('theater_report', 'Admin\TheaterController@report');
 
-        //Projections        
+        //Projections
         Route::get('manage_projections/{id}', 'Admin\ProjectionController@manage');
         Route::post('manage_projections/{id}', 'Admin\ProjectionController@save');
         Route::get('delete_projection/{id}', 'Admin\ProjectionController@delete');
