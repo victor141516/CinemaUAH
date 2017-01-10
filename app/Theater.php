@@ -23,4 +23,13 @@ class Theater extends Model
     {
         return $this->hasMany('App\Projection');
     }
+
+    public function getTheaterUsageOfFilm()
+    {
+        $time = 0;
+        foreach ($this->projections as $each) {
+            $time += $each->film->minutes_duration;
+        }
+        return $time/(Carbon::now()->diffInMinutes($first_projection->begin));
+    }
 }

@@ -12,7 +12,6 @@ use Carbon\Carbon;
 
 class TheaterController extends Controller
 {
-    
     public function add()
     {
         return view('admin.theater.add');
@@ -45,6 +44,7 @@ class TheaterController extends Controller
 
     public function report()
     {
+        $first_projection = Projection::orderBy('begin', 'ASC')->first();
         $theaters = Theater::with('projections')->get();
 
         return view('admin.theater.report')
