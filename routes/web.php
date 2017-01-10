@@ -51,7 +51,7 @@ Route::group(['middleware' => 'auth'], function () {
         //Tickets
         Route::get('manage_tickets', 'Admin\TicketController@manage');
         Route::get('manage_tickets/{projection_id}', 'Admin\TicketController@seats');
-        Route::get('tickets_report/{group}', 'Admin\TicketController@report');
+        Route::get('tickets_report', 'Admin\TicketController@report');
     });
 });
 Auth::routes();
