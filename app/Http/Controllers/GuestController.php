@@ -108,20 +108,15 @@ class GuestController extends Controller
     public function printTicket(Request $request, $projection_id)
     {
         $token = uniqid("", true);
-        if (!Auth::check()) {
-            $ticket_ids = $request->session()->pull('tickets');
-            $tickets = Ticket::whereIn('id', $ticket_ids);
-        } else {
-            $tickets = $request->user()->tickets();
-        }
-        $tickets->update(['token' => $token]);
-        $tickets = $tickets->with(['projection' => function($query) {
+        $ticket_ids = $request->session()->pull('tickets');
+        $tickets = Ticket::whereIn('id', $ticket_ids)->update(['token' => $token]);
+        $tickets = Ticket::whereIn('id', $ticket_ids)->with(['projection' => function($query) {
             $query->with('film');
             $query->with('theater');
-        }])->where('projection_id', $projection_id);
+        }])->get();
 
         $pdf = PDF::loadView('public.pdf', [
-            'tickets' => $tickets->get(),
+            'tickets' => $tickets,
             'qr' => DNS2D::getBarcodePNG($token, "QRCODE"),
         ]);
 

@@ -25,6 +25,7 @@
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
+                    {{ csrf_field() }}
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
             </div>
